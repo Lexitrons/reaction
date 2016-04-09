@@ -4,3 +4,8 @@ react.sublime-workspace
 react.sublime-project
 
 node_modules/
+npm-debug.log
+
+reaction.sublime-project
+
+reaction.sublime-workspace

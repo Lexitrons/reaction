@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.9.1",
     "css": "^2.2.1",
+    "jquery": "^2.2.3",
     "loader": "^2.1.0",
     "node-sass": "^3.4.2",
     "react": "^0.14.8",
