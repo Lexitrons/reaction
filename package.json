@@ -1,0 +1,35 @@
+{
+  "name": "reaction",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prod": "webpack -p",
+    "start": "webpack-dev-server",
+    "cssWatch": "node-sass -w  app/_CSS/ -o dist/_CSS/"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.9.1",
+    "css": "^2.2.1",
+    "loader": "^2.1.0",
+    "node-sass": "^3.4.2",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-router": "^2.0.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^2.15.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
