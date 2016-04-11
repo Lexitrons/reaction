@@ -2,8 +2,6 @@ var React = require('react');
 var FormFields = require('../components/formFields');
 var Places = require('../components/Places');
 
-var $ = require ('jquery')
-
 var FormFieldsContainer = React.createClass({
 
   getInitialState: function () {
@@ -11,50 +9,50 @@ var FormFieldsContainer = React.createClass({
     return {
       isLoading: true,
       firstname: "",
-      lastname: ""
+      search: "",
+      places: []
     }
   },
 
   componentDidMount: function() {
-    console.log("mounted")
+     map = new google.maps.Map( document.getElementById('map'), {
+        zoom: 15
+    });
+
     this.setState({
-      isLoading: true,
-      places: ""
+      isLoading: false,
     });
   },
 
   handleChange: function(a) {
+    
     this.setState({
       [a.target.name]: a.target.value
     });
+    var map = new google.maps.places.AutocompleteService();
+        
+    map.getQueryPredictions({ input: a.target.value }, this.callback);
 
-     map = new google.maps.Map(document.getElementById('map'), {
+  } ,
+    handleSubmit: function (e) {
+        e.preventDefault();
+        request = {
+            query: this.state.search
+        };
 
-        zoom: 15
-    });
-
-    var request = {
-        query: this.state.firstname
-    };
-
-    service = new google.maps.places.PlacesService(map);
-    service.textSearch(request, this.callback);
-  },
-
-  handleSubmit: function (e) {
-    e.preventDefault();
-
+        service = new google.maps.places.PlacesService(map);
+        service.textSearch(request, this.callback);
    },
    
    callback: function( response, status ) {
         this.setState({
             places : response
         })
-        console.log(this.state.places)
    },
   
   render: function () { 
     return (
+      <div>
 
       <FormFields
         onSubmit={this.handleSubmit}
@@ -62,7 +60,12 @@ var FormFieldsContainer = React.createClass({
         onChange={this.handleChange}
       />
 
-      
+      <Places 
+        header={"Places Header"}
+        searchResults={this.state.places}
+      />
+
+      </div>
     )
   }
 });

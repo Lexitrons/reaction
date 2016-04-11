@@ -1,17 +1,27 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 
+var PlaceItem = require('../components/PlaceItem');
+
 function Places (props) {
-	console.log( props );
-
-    return 
-    	<div className="place-wrap">
-            <h1 className="form-header">{props.header}</h1>
-            <ul className="places">
-            	<li className="place__item"></li>
-            </ul>
-        </div>
-
+ 
+        return (
+        	<div className="place-wrap">
+                <h1 className="form-header">{props.header}</h1>
+                <ul className="places">
+                    {props.searchResults.map( function( info, index) {
+                        return (
+                            <PlaceItem 
+                                result={info}
+                                key={index}
+                            />
+                        )
+                    })}
+                	 
+                </ul>
+               
+            </div>
+        )
 };
 
 Places.propTypes = {

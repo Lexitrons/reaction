@@ -26,15 +26,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [HTMLWebpackPluginConfig],
-
-  proxy: {
-  'maps/*': {
-    target: 'https://maps.googleapis.com',
-    secure: true
-  }
-}
-
+  plugins: [HTMLWebpackPluginConfig]
 
 };
  

@@ -10,13 +10,15 @@ var hashHistory = ReactRouter.hashHistory
 var Main = require('../components/Main');
 var Home = require('../components/Home');
 var formFieldsContainer = require('../containers/formFieldsContainer');
+var detailsContainer = require('../containers/detailsContainer');
  
-
 var routes = (
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
             <IndexRoute component={Home} />
             <Route path='/form' header='Fill Out Info' component={formFieldsContainer} />
+            <Route name="detail" path='/detail' header='Product Detail' component={detailsContainer} />
+
         </Route>
     </Router>
 )

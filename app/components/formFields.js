@@ -9,23 +9,14 @@ function FormFields (props) {
             <form onSubmit={props.onSubmit} className="form">
 	            <ul className="form__list">
 		            <li className="form__field-wrap">
-		            	<label htmlFor="first" className="form__label">First Name</label>
-		            	<input type="text" onChange={props.onChange} name="firstname" id="first" className="form__input"/>
-		  
-		            </li>
-
-		            <li className="form__field-wrap">
-		            	<label htmlFor="last" className="form__label">Last Name</label>
-		            	<input type="text" onChange={props.onChange} name="lastname" id="last" className="form__input"/>
-		  
+		            	<label htmlFor="search" className="form__label">Search </label>
+		            	<input type="text" onChange={props.onChange} name="search" id="search" className="form__input"/>
 		            </li>
 		            <li className="form__field-wrap">
 		            	<button type="submit" className="form__submit">Submit</button>
 		            </li>
 	            </ul>
             </form>
-
-            <div id="resultsWrap"></div>
         </div>
 
 };
