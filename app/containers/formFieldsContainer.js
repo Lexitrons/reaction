@@ -1,5 +1,6 @@
 var React = require('react');
 var FormFields = require('../components/formFields');
+var Places = require('../components/Places');
 
 var $ = require ('jquery')
 
@@ -17,7 +18,8 @@ var FormFieldsContainer = React.createClass({
   componentDidMount: function() {
     console.log("mounted")
     this.setState({
-      isLoading: true
+      isLoading: true,
+      places: ""
     });
   },
 
@@ -25,14 +27,8 @@ var FormFieldsContainer = React.createClass({
     this.setState({
       [a.target.name]: a.target.value
     });
-  },
 
-  handleSubmit: function (e) {
-    e.preventDefault();
-
-   
-
-    map = new google.maps.Map(document.getElementById('map'), {
+     map = new google.maps.Map(document.getElementById('map'), {
 
         zoom: 15
     });
@@ -43,21 +39,30 @@ var FormFieldsContainer = React.createClass({
 
     service = new google.maps.places.PlacesService(map);
     service.textSearch(request, this.callback);
+  },
+
+  handleSubmit: function (e) {
+    e.preventDefault();
 
    },
    
    callback: function( response, status ) {
-        console.log( response )
+        this.setState({
+            places : response
+        })
+        console.log(this.state.places)
    },
   
   render: function () { 
     return (
+
       <FormFields
         onSubmit={this.handleSubmit}
         header={this.props.route.header}
         onChange={this.handleChange}
       />
 
+      
     )
   }
 });
