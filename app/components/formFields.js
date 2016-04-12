@@ -11,9 +11,13 @@ function FormFields (props) {
 		            <li className="form__field-wrap">
 		            	<label htmlFor="search" className="form__label">Search </label>
 		            	<input type="text" onChange={props.onChange} name="search" id="search" className="form__input"/>
+                        { props.error !== "" && 
+                            <p className="error">{props.error}</p>
+                        }
 		            </li>
 		            <li className="form__field-wrap">
 		            	<button type="submit" className="form__submit">Submit</button>
+                        <button onClick={props.clear} type="button" className="form__clear">Clear</button>
 		            </li>
 	            </ul>
             </form>

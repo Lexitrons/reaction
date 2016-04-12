@@ -10,7 +10,8 @@ var FormFieldsContainer = React.createClass({
       isLoading: true,
       firstname: "",
       search: "",
-      places: []
+      places: [],
+      inputError : ""
     }
   },
 
@@ -29,49 +30,67 @@ var FormFieldsContainer = React.createClass({
     this.setState({
       [a.target.name]: a.target.value
     });
-    var map = new google.maps.places.AutocompleteService();
-        
-    map.getQueryPredictions({ input: a.target.value }, this.callback);
+  },
 
-  } ,
     handleSubmit: function (e) {
         e.preventDefault();
-        request = {
-            query: this.state.search
-        };
+        
+    if(this.state.search === "") {
+        this.setState({
+            errorMessage : "Please Fill Out the Field"
+        })
+    } else {
 
-        service = new google.maps.places.PlacesService(map);
-        service.textSearch(request, this.callback);
+      this.handleClear()
+
+      request = {
+          query: this.state.search
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.textSearch(request, this.callback);
+    }
+        
    },
+
+   handleClear: function() {
+      this.setState({
+        places : []  
+      })
+   },
+
    
    callback: function( response, status ) {
         this.setState({
-            places : response
+            places : response,
+            isLoading: false,
+            errorMessage: ""
         })
    },
   
   render: function () { 
     return (
       <div>
-
-      <FormFields
+        <div className="left-column">
+        <FormFields
         onSubmit={this.handleSubmit}
         header={this.props.route.header}
         onChange={this.handleChange}
+        clear={this.handleClear}
+        error={this.state.errorMessage}
       />
-
-      <Places 
-        header={"Places Header"}
-        searchResults={this.state.places}
-      />
-
+      </div>
+      
+    <div className="right-column">
+        <Places 
+            header={"Places Header"}
+            searchResults={this.state.places}
+        />
+        </div>
       </div>
     )
   }
 });
 
 module.exports = FormFieldsContainer;
- 
- // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&type=restaurant&name=cruise&key=YOUR_API_KEY
-
  

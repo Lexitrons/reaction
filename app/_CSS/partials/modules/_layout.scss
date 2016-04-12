@@ -3,3 +3,50 @@
     max-width: 1000px;
     margin: 0 auto;
 }
+
+#detail-map__map {
+    padding-top: 50%;
+}
+
+.appear {
+  opacity: 0.01;
+  transform: translateY(-1000%);
+}
+
+.appear.appear-active {
+  opacity: 1;
+  transition: all 300ms ease-in;
+  transform: translateY(0);
+}
+
+.leave {
+  opacity: 1;
+  transition: all 300ms ease-in;
+  transform: translateY(0);
+}
+
+.leave.leave-active {
+  opacity: 0.01;
+  transform: translateY(-1000%);
+}
+
+.places {
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+$delay: 100;
+$n: 0;
+
+@for $i from 1 through 20 {
+    $delay: $delay + 25;
+  
+ 
+    .place__item:nth-child(#{$i}) {
+        transition-delay: #{$delay}ms;
+    }
+ 
+}
+

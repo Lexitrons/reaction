@@ -1,13 +1,14 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var ReactRouter = require("react-router");
+ 
 var Link = ReactRouter.Link;
 
 function PlaceItem (props) {
 	console.log( props );
         
         return (
-            <li className="place__item">
+            <li key={props.key} className="place__item">
             {props.result.name}
                 <br />
             {props.result.formatted_address}
@@ -18,12 +19,13 @@ function PlaceItem (props) {
               <button type='button' className='home-hero__button'>View Details</button>
             </Link>
             </li>
+          
         )
  
 };
 
 PlaceItem.propTypes = {
-  // header: PropTypes.string.isRequired,
+  result: PropTypes.object.isRequired
   
 };
 

@@ -1,8 +1,9 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+var ReviewsContainer = require('../containers/ReviewsContainer');
 
 function DetailInfo (props) {
-    console.log( props )
+    console.log(props)
     return props.isLoading === true
     ? <p>LOADING</p>
     :  <div className="detail-wrap">
@@ -27,19 +28,15 @@ function DetailInfo (props) {
                     <li className="detail__item"> {props.info.formatted_phone_number}
                 </li>}
 
-                { !!props.info.types && 
-                    <li className="detail__item">
-                        <h3 className="detail__subtitle">Types:</h3>
-                        <ul className="detail__types">
-                        {props.info.types.map(function(info, index){
-                            return <li key={index} className="detail__item"> {props.info.types[index]}</li>
-                        })}
-                        </ul>
+                { !!props.info.reviews && 
+                    <li className="detail__item"> 
+                         <ReviewsContainer
+                                review={props.info.reviews}
+                            />
                     </li>
-                     
                 }
 
-                 { !!props.info.website && 
+                { !!props.info.website && 
                     <li className="detail__item"> 
                         <a target="_blank" href={props.info.website} className="detail__link">View Website</a>
                     </li>
@@ -51,12 +48,8 @@ function DetailInfo (props) {
                     </li>
                 }
 
-
+               
             </ul>
-            
-
-          
-
         </div>
     </div>
 
