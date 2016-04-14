@@ -9,15 +9,29 @@ function PlaceItem (props) {
         
         return (
             <li key={props.key} className="place__item">
-            {props.result.name}
-                <br />
-            {props.result.formatted_address}
-            <br/>
-        {props.result.id}
-             <br/>
-            <Link to={{ pathname: 'detail',  query: { place:  props.result.place_id } }} >
-              <button type='button' className='home-hero__button'>View Details</button>
-            </Link>
+                <div className="place__main-info">
+                    <figure className="place__figure">
+                        <img src={props.result.icon} alt="" className="place__icon"/>
+                    </figure>
+                    
+                    <div className="place__info">
+                        <h3 className="place__title">
+                            {props.result.name}
+                        </h3>
+                        <p className="place__address">
+                            {props.result.formatted_address}
+                        </p>
+                    </div>
+                </div>
+            
+                <div className="place__subinfo">
+                
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ipsum, iusto quam, eaque optio eveniet incidunt neque dolores iste eum voluptate et libero aliquam eligendi, veritatis explicabo hic nihil deserunt.</p>
+                    <Link className="place__button" 
+                        to={{ pathname: 'detail',  query: { place:  props.result.place_id } }} >
+                        View Details 
+                    </Link>
+                </div>
             </li>
           
         )

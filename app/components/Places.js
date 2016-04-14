@@ -5,11 +5,11 @@ var PlaceItem = require('../components/PlaceItem');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 function Places (props) {
- 
+        
         return (
         	<div className="place-wrap">
-                <h1 className="form-header">{props.header}</h1>
-                <ul className="places">
+                {!!props.header &&<h1 className="place__header">Showing "<span className="result-total">{props.searchResults.length}</span>"result{props.searchResults.length > 1 && "s"} for {props.header}  </h1>}
+
                 <ReactCSSTransitionGroup 
                 transitionName={{
                     enter: 'appear',
@@ -19,13 +19,13 @@ function Places (props) {
                     appear: 'appear',
                     appearActive: 'appear-active'
                 }}
-                transitionEnterTimeout={3000}
-                transitionLeaveTimeout={3000}
-                transitionAppearTimeot={3000}
+                transitionEnterTimeout={1000}
+                transitionLeaveTimeout={1000}
+                transitionAppearTimeout={300}
                 transitionLeave={true}
                 transitionAppear={true}
                 component='ul' 
-                className="places">
+                className="place">
                     {props.searchResults.map( function( info, index) {
                         return (
                             <PlaceItem 
@@ -35,8 +35,6 @@ function Places (props) {
                         )
                     })}
                 	 </ReactCSSTransitionGroup>
-                </ul>
-               
             </div>
         )
 };

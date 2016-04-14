@@ -6,7 +6,7 @@
   "scripts": {
     "prod": "webpack -p",
     "start": "webpack-dev-server",
-    "cssWatch": "node-sass -w  app/_CSS/ -o dist/_CSS/"
+    "cssWatch": "node-sass -w app/_CSS/ -o dist/_CSS/"
   },
   "author": "",
   "license": "ISC",

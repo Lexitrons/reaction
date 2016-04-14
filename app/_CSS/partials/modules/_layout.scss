@@ -1,7 +1,23 @@
 .main-container {
     width: 100%;
-    max-width: 1000px;
+    height: 100vh;
     margin: 0 auto;
+    background: $tan-dark;
+}
+
+.main-inner {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.left-column,
+.right-column {
+   flex-basis: 50%;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 #detail-map__map {
@@ -29,24 +45,3 @@
   opacity: 0.01;
   transform: translateY(-1000%);
 }
-
-.places {
-    position: relative;
-    overflow: hidden;
-
-
-}
-
-$delay: 100;
-$n: 0;
-
-@for $i from 1 through 20 {
-    $delay: $delay + 25;
-  
- 
-    .place__item:nth-child(#{$i}) {
-        transition-delay: #{$delay}ms;
-    }
- 
-}
-

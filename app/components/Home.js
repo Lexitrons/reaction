@@ -1,17 +1,39 @@
 var React = require('react');
 var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var Home = React.createClass({
   render:function(){
     return (
-        <div className="home-hero">
-            <h1 className="home-hero__title">First App</h1>
-            <p className="home-hero__subtitle">Go easy.... it's my first time.</p>
-           <Link to='/form'>
-              <button type='button' className='home-hero__button'>Get Started</button>
-            </Link>
-        </div> 
+        <ReactCSSTransitionGroup 
+                transitionName={{
+                    enter: 'page-appear',
+                    enterActive: 'page-appear-active',
+                    leave: 'page-leave',
+                    leaveActive: 'page-leave-active',
+                    appear: 'page-appear',
+                    appearActive: 'page-appear-active'
+                }}
+                transitionEnterTimeout={300}
+                transitionLeaveTimeout={300}
+                transitionAppearTimeout={300}
+                transitionLeave={true}
+                transitionAppear={true}
+                component='div' 
+                className="main-inner home-hero__wrap">
+                <div className="home-hero">
+                    
+                    <h1 className="home-hero__title">Initial Reactions</h1>
+                    
+                    <p className="home-hero__subtitle">Go easy.... it's my first time.</p>
+                    
+                    <Link to='/form'>
+                      <button type='button' className='home-hero__button'>Get Started</button>
+                    </Link>
+                </div> 
+        </ReactCSSTransitionGroup>
+        
 
     )
   }

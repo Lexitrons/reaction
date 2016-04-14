@@ -81,8 +81,8 @@ var DetailsContainer = React.createClass({
 
   render: function () { 
     return (
-      <div>
-      <div>
+      <div className="main-inner">
+      <div class="left-column">
          <DetailInfo 
             info={this.state.details}
             isLoading={this.state.isLoading}
@@ -90,7 +90,7 @@ var DetailsContainer = React.createClass({
          />
         </div>
 
-        <div>
+        <div className="right-column">
         <DetailMap
             
         />

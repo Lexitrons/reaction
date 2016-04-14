@@ -1,6 +1,8 @@
 var React = require('react');
 var FormFields = require('../components/formFields');
 var Places = require('../components/Places');
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 
 var FormFieldsContainer = React.createClass({
 
@@ -11,7 +13,8 @@ var FormFieldsContainer = React.createClass({
       firstname: "",
       search: "",
       places: [],
-      inputError : ""
+      inputError : "",
+      title: ""
     }
   },
 
@@ -38,9 +41,10 @@ var FormFieldsContainer = React.createClass({
     if(this.state.search === "") {
         this.setState({
             errorMessage : "Please Fill Out the Field"
+
         })
     } else {
-
+  
       this.handleClear()
 
       request = {
@@ -58,20 +62,35 @@ var FormFieldsContainer = React.createClass({
         places : []  
       })
    },
-
-   
    callback: function( response, status ) {
         this.setState({
             places : response,
             isLoading: false,
-            errorMessage: ""
+            errorMessage: "",
+            title: this.state.search
         })
    },
+ 
   
   render: function () { 
     return (
-      <div>
-        <div className="left-column">
+      <div className="main-inner">
+        <ReactCSSTransitionGroup 
+                transitionName={{
+                    enter: 'appear',
+                    enterActive: 'appear-active',
+                    leave: 'leave',
+                    leaveActive: 'leave-active',
+                    appear: 'appear',
+                    appearActive: 'appear-active'
+                }}
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={500}
+                transitionAppearTimeout={500}
+                transitionLeave={true}
+                transitionAppear={true}
+                component='div' 
+                className="left-column">
         <FormFields
         onSubmit={this.handleSubmit}
         header={this.props.route.header}
@@ -79,14 +98,31 @@ var FormFieldsContainer = React.createClass({
         clear={this.handleClear}
         error={this.state.errorMessage}
       />
-      </div>
+      </ReactCSSTransitionGroup>
       
-    <div className="right-column">
+    <ReactCSSTransitionGroup 
+                transitionName={{
+                    enter: 'appear',
+                    enterActive: 'appear-active',
+                    leave: 'leave',
+                    leaveActive: 'leave-active',
+                    appear: 'appear',
+                    appearActive: 'appear-active'
+                }}
+                transitionEnterTimeout={700}
+                transitionLeaveTimeout={700}
+                transitionAppearTimeout={700}
+                transitionLeave={true}
+                transitionAppear={true}
+                component='div' 
+                className="right-column"
+                >
+
         <Places 
-            header={"Places Header"}
+            header={this.state.title}
             searchResults={this.state.places}
         />
-        </div>
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
