@@ -9,29 +9,26 @@ function PlaceItem (props) {
         
         return (
             <li key={props.key} className="place__item">
-                <div className="place__main-info">
-                    <figure className="place__figure">
-                        <img src={props.result.icon} alt="" className="place__icon"/>
-                    </figure>
-                    
-                    <div className="place__info">
-                        <h3 className="place__title">
-                            {props.result.name}
-                        </h3>
-                        <p className="place__address">
-                            {props.result.formatted_address}
-                        </p>
-                    </div>
-                </div>
-            
-                <div className="place__subinfo">
-                
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, ipsum, iusto quam, eaque optio eveniet incidunt neque dolores iste eum voluptate et libero aliquam eligendi, veritatis explicabo hic nihil deserunt.</p>
-                    <Link className="place__button" 
+                <Link className="place__link" 
                         to={{ pathname: 'detail',  query: { place:  props.result.place_id } }} >
-                        View Details 
-                    </Link>
-                </div>
+                    
+                    <div className="place__main-info">
+                       
+                        <figure className="place__figure">
+                            <img src={props.result.icon} alt="" className="place__icon"/>
+                        </figure>
+                        
+                        <div className="place__info">
+                            <h3 className="place__title">
+                                {props.result.name}
+                            </h3>
+                            <p className="place__address">
+                                {props.result.formatted_address}
+                            </p>
+                        </div>
+                    
+                    </div>
+                </Link>
             </li>
           
         )

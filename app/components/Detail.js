@@ -8,12 +8,14 @@ function DetailInfo (props) {
     ? <p>LOADING</p>
     :  <div className="detail-wrap">
         <div className="detail">
-            <h2 className="detail__title">
-                {props.info.name}
-            </h2>
-            <figure className="detail__figure">
-                { !!props.image && <img src={props.image[0].url} alt="" className="detail__image"/>}
-            </figure>
+            <div className="detail__header">
+                <h2 className="detail__title">
+                    {props.info.name}
+                </h2>
+                <figure className="detail__figure">
+                    { !!props.image && <img src={props.image[0].url} alt="" className="detail__image"/>}
+                </figure>
+            </div>
             
             <ul className="detail__info">
                 { !!props.info.formatted_address && 

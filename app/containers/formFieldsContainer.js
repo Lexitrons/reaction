@@ -1,5 +1,6 @@
 var React = require('react');
 var FormFields = require('../components/formFields');
+var FormDesc = require('../components/FormDesc');
 var Places = require('../components/Places');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
@@ -13,8 +14,9 @@ var FormFieldsContainer = React.createClass({
       firstname: "",
       search: "",
       places: [],
-      inputError : "",
-      title: ""
+      errorMessage : "",
+      title: "",
+      length: ""
     }
   },
 
@@ -59,7 +61,8 @@ var FormFieldsContainer = React.createClass({
 
    handleClear: function() {
       this.setState({
-        places : []  
+        places : [],
+        title: "" 
       })
    },
    callback: function( response, status ) {
@@ -67,7 +70,8 @@ var FormFieldsContainer = React.createClass({
             places : response,
             isLoading: false,
             errorMessage: "",
-            title: this.state.search
+            title: this.state.search,
+            total: response.length
         })
    },
  
@@ -91,13 +95,9 @@ var FormFieldsContainer = React.createClass({
                 transitionAppear={true}
                 component='div' 
                 className="left-column">
-        <FormFields
-        onSubmit={this.handleSubmit}
-        header={this.props.route.header}
-        onChange={this.handleChange}
-        clear={this.handleClear}
-        error={this.state.errorMessage}
-      />
+        <FormDesc
+
+        />
       </ReactCSSTransitionGroup>
       
     <ReactCSSTransitionGroup 
@@ -109,18 +109,27 @@ var FormFieldsContainer = React.createClass({
                     appear: 'appear',
                     appearActive: 'appear-active'
                 }}
-                transitionEnterTimeout={700}
-                transitionLeaveTimeout={700}
-                transitionAppearTimeout={700}
+                transitionEnterTimeout={200}
+                transitionLeaveTimeout={200}
+                transitionAppearTimeout={200}
                 transitionLeave={true}
                 transitionAppear={true}
                 component='div' 
                 className="right-column"
                 >
-
+    <FormFields
+        onSubmit={this.handleSubmit}
+        header={this.state.title}
+        onChange={this.handleChange}
+        clear={this.handleClear}
+        
+       
+      />
         <Places 
             header={this.state.title}
             searchResults={this.state.places}
+            error={this.state.errorMessage} 
+            total={this.state.total}
         />
         </ReactCSSTransitionGroup>
       </div>

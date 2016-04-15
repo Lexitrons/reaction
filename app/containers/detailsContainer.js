@@ -1,6 +1,8 @@
 var React = require('react');
 var DetailInfo = require('../components/Detail');
 
+var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
+
 var DetailMap = require('../components/DetailMap');
 
 var DetailsContainer = React.createClass({
@@ -82,19 +84,50 @@ var DetailsContainer = React.createClass({
   render: function () { 
     return (
       <div className="main-inner">
-      <div class="left-column">
+      <ReactCSSTransitionGroup 
+                transitionName={{
+                    enter: 'appear',
+                    enterActive: 'appear-active',
+                    leave: 'leave',
+                    leaveActive: 'leave-active',
+                    appear: 'appear',
+                    appearActive: 'appear-active'
+                }}
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={500}
+                transitionAppearTimeout={500}
+                transitionLeave={true}
+                transitionAppear={true}
+                component='div' 
+                className="left-column--quarter">
          <DetailInfo 
             info={this.state.details}
             isLoading={this.state.isLoading}
             image={this.state.imageUrl}
          />
-        </div>
+        </ReactCSSTransitionGroup>
 
-        <div className="right-column">
+        <ReactCSSTransitionGroup 
+                transitionName={{
+                    enter: 'appear',
+                    enterActive: 'appear-active',
+                    leave: 'leave',
+                    leaveActive: 'leave-active',
+                    appear: 'appear',
+                    appearActive: 'appear-active'
+                }}
+                transitionEnterTimeout={200}
+                transitionLeaveTimeout={200}
+                transitionAppearTimeout={200}
+                transitionLeave={true}
+                transitionAppear={true}
+                component='div' 
+                className="right-column--three-quarter"
+                >
         <DetailMap
             
         />
-         </div>
+         </ReactCSSTransitionGroup>
      </div>
     )
   }

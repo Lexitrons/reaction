@@ -1,14 +1,6 @@
 .form-wrap {
-    height: 100%;
-    background: $blue-bg;
-    align-items: center;
-    color: $white;
-    padding: 30px;
-    transition: all 0.5s;
-    opacity: 1;
-    transform: translateX(0);
-    display: flex;
-
+    height: 10%;
+    
     &.appear {
       opacity: 0.01;
       transform: translateX(-1000%);
@@ -27,9 +19,55 @@
 }
 
 .form {
-    align-content: center;
 
-    &__header {
-        font-size: 3rem;
+    align-content: center;
+    
+
+    ::-webkit-input-placeholder {
+       color: lighten($teal , 20);
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: lighten($teal , 20);  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: lighten($teal , 20);  
+    }
+
+    :-ms-input-placeholder {  
+       color: lighten($teal , 20);  
+    }
+
+    
+    &__field-wrap {
+        display: flex;
+    }
+
+    &__label {
+        position: absolute;
+        left: -999em;
+    }
+
+    &__clear {
+        flex: 1;
+    }
+    &__submit {
+        flex: 1;
+    }
+
+    &__input {
+        font-family: $font-sans;
+        height: 100%;
+        flex: 10;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: $teal;
+        border: 0;
+        font-size: 1em;
+        padding: 15px;
+        color: $white;
     }
 }
+

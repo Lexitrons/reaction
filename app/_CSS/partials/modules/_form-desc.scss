@@ -1,0 +1,46 @@
+.form-desc-wrap {
+    height: 100%;
+    background: $blue-bg;
+    align-items: center;
+    color: $white;
+    padding: 30px;
+    transition: all 0.5s;
+    opacity: 1;
+    transform-desc: translateX(0);
+    display: flex;
+
+    &.appear {
+      opacity: 0.01;
+      transform: translateX(-1000%);
+    }
+
+    &.leave {
+      opacity: 1;
+      transition: all 300ms ease-in;
+      transform: translateX(0);
+    }
+
+    &.leave.leave-active {
+      opacity: 0.01;
+      transform: translateX(-1000%);
+    }
+}
+
+
+.form-desc {
+    align-content: center;
+    
+    &__inner {
+        color: $tan-bg;
+    }
+
+    &__header {
+        font-size: 3rem;
+        
+    }
+
+    &__subtext {
+        line-height: 1.75;
+        font-size: 0.9em;
+    }
+}
