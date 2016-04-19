@@ -1,6 +1,5 @@
 .detail-wrap {
-    background: $blue-bg;
-
+  color: $black;
     &.appear {
       opacity: 0.01;
       transform: translateX(-1000%);
@@ -21,12 +20,19 @@
 
 .detail {
     height: 100%;
+    background: $white;
+    overflow-y: scroll;
 
     &__title {
-        font-size: 3em;
-        color: $white;
-        padding: 1em 30px;
+        font-size: 2em;
+        color: #ffffff;
+        padding: .75em 15px;
+        line-height: 1;
+        font-weight: normal;
+        background: $red;
+        margin: 0;
     }
+
     &__header {
         position: relative;
     }
@@ -39,11 +45,42 @@
     &__figure {
         position: relative;
         overflow: hidden;
+        max-height: 250px;
+        box-shadow: 1px 1px 10px 1px rgba(47, 53, 60, 0.5);
     }
 
     &__info {
-        color: $white;
-        padding: 30px;
+      position: relative;
+      z-index: 1;
+        font-family: $font-sans;
+        color: $black;
     }
+
+    &__item {
+      padding: 15px;
+      box-shadow: 1px 1px 10px 1px rgba(47, 53, 60, 0.5);
+      background: $white;
+ 
+    }
+}
+
+.review {
+  padding: 20px 0;
+
+  & + & {
+    border-top: 1px solid lighten($black, 50);
+  }
+
+  &__desc {
+    font-size: 0.8em;
+    font-family: $font-serif;
+    line-height: 1.75;
+  }
+  
+  &__author {
+      font-size: 0.9em;
+      font-weight: bold;
+      margin-bottom: 5px;
+  }
 }
 

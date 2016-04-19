@@ -37,7 +37,7 @@ var ReviewsContainer = React.createClass({
   render: function () { 
     return (
       <div>
-          <h3 onClick={this.handleClick} className="detail__subtitle">Reviews <span>{this.state.toggle}</span></h3>
+          <h3 onClick={this.handleClick} className="detail__subtitle">Reviews <span className="review__trigger">{this.state.toggle}</span></h3>
           <ul className="detail__reviews">
           { !this.state.hidden && this.props.review.map( function( info, index) {
               return (
