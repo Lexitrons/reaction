@@ -80,7 +80,23 @@
   &__author {
       font-size: 0.9em;
       font-weight: bold;
-      margin-bottom: 5px;
+  }
+
+  &__image {
+    width: 45px;
+    border-radius: 100%;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+
+  &__heading-content {
+    padding: 5px 0;
   }
 }
 

@@ -1,0 +1,28 @@
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &__count {
+        font-size: 0.8rem;
+ 
+    }
+
+}
+
+.stars {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+
+    &__item {
+        height: 20px;
+        padding: 0 3px;
+    }
+
+    &__star {
+        width: 15px;
+        height: 15px;
+        fill: $red;
+    }
+}

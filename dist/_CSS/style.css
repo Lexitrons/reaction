@@ -512,5 +512,34 @@ table {
     line-height: 1.75; }
   .review__author {
     font-size: 0.9em;
-    font-weight: bold;
-    margin-bottom: 5px; }
+    font-weight: bold; }
+  .review__image {
+    width: 45px;
+    border-radius: 100%;
+    margin-right: 15px;
+    vertical-align: middle; }
+  .review__heading {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px; }
+  .review__heading-content {
+    padding: 5px 0; }
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; }
+  .rating__count {
+    font-size: 0.8rem; }
+
+.stars {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px; }
+  .stars__item {
+    height: 20px;
+    padding: 0 3px; }
+  .stars__star {
+    width: 15px;
+    height: 15px;
+    fill: #CE4F4F; }

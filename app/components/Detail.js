@@ -3,7 +3,7 @@ var PropTypes = React.PropTypes;
 var ReviewsContainer = require('../containers/ReviewsContainer');
 
 function DetailInfo (props) {
-    console.log(props)
+ 
     return props.isLoading === true
     ? <p>LOADING</p>
     :  <div className="detail-wrap">
