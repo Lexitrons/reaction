@@ -8,7 +8,9 @@ function Reviews (props) {
             <div className="review__wrap">
                 
                 <div className="review__heading">
-                    <img className="review__image" src={props.reviews.profile_photo_url} alt="{props.reviews.author_name}"/>
+                    {props.reviews.profile_photo_url &&
+                        <img className="review__image" src={props.reviews.profile_photo_url} alt="{props.reviews.author_name}"/>
+                    }
                     <div className="review__heading-content">
                         <h4 className="review__author"> {props.reviews.author_name}</h4>
                         <Stars count={props.reviews.rating} />

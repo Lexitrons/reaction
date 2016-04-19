@@ -4,9 +4,8 @@ var ReviewsContainer = require('../containers/ReviewsContainer');
 
 function DetailInfo (props) {
  
-    return props.isLoading === true
-    ? <p>LOADING</p>
-    :  <div className="detail-wrap">
+    return (
+        <div className="detail-wrap">
         <div className="detail">
             <div className="detail__header">
                 <h2 className="detail__title">
@@ -19,7 +18,10 @@ function DetailInfo (props) {
             
             <ul className="detail__info">
                 { !!props.info.formatted_address && 
-                    <li className="detail__item"> {props.info.formatted_address}
+                    <li className="detail__item"> 
+                        <p className="detail__address">
+                            {props.info.formatted_address}
+                        </p>
                 </li>}
 
                 { !!props.info.formatted_phone_number && 
@@ -54,7 +56,7 @@ function DetailInfo (props) {
             </ul>
         </div>
     </div>
-
+)
 };
 
 DetailInfo.propTypes = {

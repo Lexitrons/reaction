@@ -51,9 +51,42 @@
 
     &__clear {
         flex: 1;
+        font-family: $font-sans;
+        -webkit-appearance: none;
+        background: $green;
+        border: 0;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 15px;
+        cursor: pointer;
+        -webkit-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
+
+        &:hover {
+            background: darken($green, 15);
+        }
     }
     &__submit {
         flex: 1;
+        font-family: $font-sans;
+        -webkit-appearance: none;
+        background: $red;
+        border: 0;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 15px;
+        cursor: pointer;
+        -webkit-transition: all 0.25s;
+        -o-transition: all 0.25s;
+        transition: all 0.25s;
+
+        &:hover {
+            background: darken($red, 15);
+        }
+
     }
 
     &__input {

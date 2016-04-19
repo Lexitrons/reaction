@@ -143,9 +143,37 @@ table {
     position: absolute;
     left: -999em; }
   .form__clear {
-    flex: 1; }
+    flex: 1;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    -webkit-appearance: none;
+    background: #1B8C8E;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s; }
+    .form__clear:hover {
+      background: #0f4d4e; }
   .form__submit {
-    flex: 1; }
+    flex: 1;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    -webkit-appearance: none;
+    background: #CE4F4F;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 15px;
+    cursor: pointer;
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s; }
+    .form__submit:hover {
+      background: #a32d2d; }
   .form__input {
     font-family: "Montserrat", Helvetica, sans-serif;
     height: 100%;
@@ -401,7 +429,6 @@ table {
   .place__icon {
     width: 30px; }
   .place__result, .place__error {
-    height: 8%;
     padding: 15px;
     background: #CE4F4F;
     color: #ffffff;
@@ -459,7 +486,10 @@ table {
     transform: translateY(-200%); }
 
 .detail-wrap {
-  color: #2f353c; }
+  color: #2f353c;
+  box-shadow: 0 0 25px -8px #2f353c;
+  z-index: 1;
+  position: relative; }
   .detail-wrap.appear {
     opacity: 0.01;
     transform: translateX(-1000%); }
@@ -501,6 +531,15 @@ table {
     padding: 15px;
     box-shadow: 1px 1px 10px 1px rgba(47, 53, 60, 0.5);
     background: #ffffff; }
+  .detail__link {
+    -webkit-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s; }
+    .detail__link:link, .detail__link:visited {
+      text-decoration: none;
+      color: #1B8C8E; }
+    .detail__link:hover, .detail__link:active, .detail__link:focus {
+      color: #CE4F4F; }
 
 .review {
   padding: 20px 0; }
@@ -527,8 +566,7 @@ table {
 
 .rating {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px; }
+  align-items: center; }
   .rating__count {
     font-size: 0.8rem; }
 
