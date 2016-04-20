@@ -81,7 +81,8 @@ var DetailsContainer = React.createClass({
     return photoArr;
   },
 
-  render: function () { 
+  render: function () {
+    
     return (
       <div className="main-inner">
       <ReactCSSTransitionGroup 
