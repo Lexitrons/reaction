@@ -4,13 +4,14 @@ var PropTypes = React.PropTypes;
 function SpotForm (props) {
     console.log(props)
     return (
-        <div>
+        <div className="spot-wrap">
             <div className="spot">
-            <p className="spot__desc">Search Spotify for an artist</p>
+                <p className="spot__desc">Search Spotify for an artist</p>
+                
                 <form onSubmit={props.onSubmit} className="spot__search">
-                    <label htmlFor="spotSearch" className="spot__label"></label>
-                    <input type="text" onChange={props.onChange} name="spotSearch" id="spotSearch" className="spot__input"/>
-                    <button type="submit">Search</button>
+                    
+                    <input type="text" onChange={props.onChange} placeholder="Search By Artist" name="spotSearch" id="spotSearch" className="spot__input"/>
+                    <button type="submit" className="spot__submit">Search</button>
                 </form>
             </div>
         </div>

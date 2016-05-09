@@ -1,5 +1,6 @@
 var React = require('react');
 var $ = require('jquery');
+var ReactRouter = require('react-router');
 var ArtistInfo = require('../components/ArtistInfo');
 var Albums = require('../components/Albums');
 var RelatedArtists = require('../components/RelatedArtists');
@@ -9,7 +10,7 @@ var SpotifyDetail = React.createClass({
 
   getInitialState: function () {
     return {
-      artist: "",
+      artist: this.props.params.artist,
       feature: {},
       albums: {},
       artistLoading: true,
@@ -18,11 +19,9 @@ var SpotifyDetail = React.createClass({
     } 
   },
   componentWillMount:function(){
-    this.setState({
-      artist:this.props.location.query.artist
-    })
+ 
   },
-
+  
   componentDidMount: function() {
     $.ajax({
         url: "https://api.spotify.com/v1/artists/"+this.state.artist+"",
@@ -36,7 +35,7 @@ var SpotifyDetail = React.createClass({
     }); 
 
      $.ajax({
-        url: "https://api.spotify.com/v1/artists/"+this.state.artist +"/albums?album_type=album",
+        url: "https://api.spotify.com/v1/artists/"+this.state.artist +"/albums",
         success: function (response) {
           console.log(response )
             this.setState( {
@@ -55,25 +54,34 @@ var SpotifyDetail = React.createClass({
               relatedLoading: false
             } );
         }.bind(this)
-    }); 
+    });
+
+
   },
 
   componentWillUpdate:function(id) {
-    
+ 
+  },
+  componentWillReceiveProps: function(i) {
+
+    this.setState({
+      artist: i.routeParams.artist,
+      artistLoading: true,
+      albumsLoading: true,
+      relatedLoading: true
+    })
+
+    this.componentDidMount();
   },
 
- handleClick:function(e) {
-  console.log("triggered")
-  var newArtist = $(e.target).attr("data-id");
-    this.setState({
-      artist: newArtist
-    })
+ handleClick:function(e, id) {  
+ 
  },
 
   render: function () { 
     return (
 
-    <div className="main-inner">
+    <div className="main-container">
            <ReactCSSTransitionGroup 
                 transitionName={{
                     enter: 'appear',
@@ -89,17 +97,16 @@ var SpotifyDetail = React.createClass({
                 transitionLeave={true}
                 transitionAppear={true}
                 component='div' 
-                className="left-column">
-        <ArtistInfo
-            info={this.state.feature}
-            isLoading={this.state.artistLoading}
-        />
+                className="hero-section">
+                <div className="artist-detail">
+                   <ArtistInfo
+                              info={this.state.feature}
+                              isLoading={this.state.artistLoading}
+                          />
 
-        <RelatedArtists
-            related={this.state.related}
-            isLoading={this.state.relatedLoading}
-            reRender={this.handleClick}
-        />
+                           
+                </div>
+       
       </ReactCSSTransitionGroup>
     <ReactCSSTransitionGroup 
                 transitionName={{
@@ -116,12 +123,19 @@ var SpotifyDetail = React.createClass({
                 transitionLeave={true}
                 transitionAppear={true}
                 component='div' 
-                className="right-column"
+                className="secondary-content"
                 >
                 <Albums
                   albums={this.state.albums}
                   isLoading={this.state.albumsLoading}
               />
+
+              <RelatedArtists
+                              related={this.state.related}
+                              isLoading={this.state.relatedLoading}
+                              reRender={this.handleClick}
+                          />
+
 
               </ReactCSSTransitionGroup>
 

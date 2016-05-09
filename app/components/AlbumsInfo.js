@@ -8,15 +8,15 @@ var Link = ReactRouter.Link;
 function Albums (props) {
     return props.isLoading === true
     ? <p>LOADING</p>
-    : <div className="albums-detail">
-            <h2 className="albums-detail__title">Albums</h2>
-            <ul className="albums-detail__list">
+    : <div>
+            <h2 className="albums-title">Albums</h2>
+            <ul className="albums__list">
                 {props.albums.items.map(function(info, index) {
+                    console.log(info)
                 return( 
-                    <li key={index} className="albums-detail__item">
-                        <Link  to={{ pathname: '/album/' + info.id }}  className="albums-detail__link">
-                            <img src={info.images[0].url} alt={info.name} className="albums-detail__img"/>
-                            <h3 className="albums-detail__name">{info.name}</h3>
+                    <li key={index} className="artist-genres__item">
+                        <Link  to={{ pathname: '/album/' + info.id }}  className="related__link">
+                            {info.name}
                         </Link>
                     </li>
                 )
