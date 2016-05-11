@@ -32,3 +32,165 @@
     height: 100%;
 }
 
+@-webkit-keyframes loading {
+   0% { 
+ 
+         opacity: 0.5;
+         transform: scale(1);
+    }
+    
+    25% {
+        transform: scale(1.25);  
+ 
+         opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75);  
+ 
+         opacity: 1;
+    }
+
+    100% { 
+        transform: scale(1); 
+ 
+         opacity: 0.5;
+     }
+}
+@-moz-keyframes loading {
+   0% { 
+ 
+         opacity: 0.5;
+         transform: scale(1);
+    }
+    
+    25% {
+        transform: scale(1.25);  
+ 
+         opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75);  
+ 
+         opacity: 1;
+    }
+
+    100% { 
+        transform: scale(1); 
+ 
+         opacity: 0.5;
+     }
+}
+@-ms-keyframes loading {
+   0% { 
+ 
+         opacity: 0.5;
+         transform: scale(1);
+    }
+    
+    25% {
+        transform: scale(1.25);  
+ 
+         opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75);  
+ 
+         opacity: 1;
+    }
+
+    100% { 
+        transform: scale(1); 
+ 
+         opacity: 0.5;
+     }
+}
+@-o-keyframes loading {
+   0% { 
+         opacity: 0.5;
+         transform: scale(1);
+    }
+    
+    25% {
+        transform: scale(1.25);  
+ 
+         opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75);  
+ 
+         opacity: 1;
+    }
+
+    100% { 
+        transform: scale(1); 
+ 
+         opacity: 0.5;
+     }
+}
+@keyframes  {
+   0% { 
+ 
+         opacity: 0.5;
+         transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);  
+         opacity: 1;
+    }
+
+    100% { 
+        transform: scale(1); 
+ 
+         opacity: 0.5;
+     }
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    svg {
+        overflow: visible;
+    }
+
+    .circle {
+        transform-origin: center center;
+        -webkit-animation: loading 1s  infinite;
+           -moz-animation: loading 1s  infinite;
+            -ms-animation: loading 1s  infinite;
+             -o-animation: loading 1s  infinite;
+                animation: loading 1s  infinite;
+            
+             &:nth-child(2) {
+                    -webkit-animation: loading 0.75s  infinite reverse;
+           -moz-animation: loading 0.75s  infinite reverse;
+            -ms-animation: loading 0.75s  infinite reverse;
+             -o-animation: loading 0.75s  infinite reverse;
+                animation: loading 0.75s  infinite reverse;
+                }
+
+                &:nth-child(3) {
+                    -webkit-animation: loading 1s  infinite reverse;
+           -moz-animation: loading 1s  infinite reverse;
+            -ms-animation: loading 1s  infinite reverse;
+             -o-animation: loading 1s  infinite reverse;
+                animation: loading 1s  infinite reverse;
+                }
+    }
+
+    &__label {
+        font-family: $font-sans;
+        color: $red;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        margin-top: 15px;
+    }
+}

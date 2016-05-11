@@ -28,8 +28,11 @@ var Home = React.createClass({
                     
                     <p className="home-hero__subtitle">Go easy.... it's my first time.</p>
                     
-                    <Link to='/form'>
-                      <button type='button' className='home-hero__button'>Get Started</button>
+                    <Link to='/form'className='home-hero__button'>
+                      <span >Google Places</span>
+                    </Link>
+                    <Link to='/music'className='home-hero__button'>
+                      <span >Spotify</span>
                     </Link>
                 </div> 
         </ReactCSSTransitionGroup>

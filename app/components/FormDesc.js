@@ -1,9 +1,10 @@
 var React = require('react');
+var Loader = require('../components/Loader');
 var PropTypes = React.PropTypes;
 
 function formDesc (props) {
     return props.isLoading === true
-    ? <p>LOADING</p>
+    ? <Loader />
     : <div className="form-desc-wrap">
             <div className="form-desc__inner">
                 <h1 className="form-desc__header">Header</h1>

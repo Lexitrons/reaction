@@ -3,6 +3,7 @@ var $ = require('jquery');
  
 var AlbumDetail = require('../components/AlbumDetail');
 var TrackSingle = require('../components/Tracks');
+var RelatedArtists = require('../components/RelatedArtists');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var SpotAlbum = React.createClass({
@@ -10,12 +11,16 @@ var SpotAlbum = React.createClass({
   getInitialState: function () {
     return {
       album: this.props.params.album,
+      // redirect: this.state.location.pathname,
       albuminfo: {},
       trackAudio: [],
-      trackinfo: []
+      trackinfo: [],
+      related: {},
+      relatedLoading: false
     } 
   },
   componentWillMount:function(){
+ 
      $.ajax({
         url: "https://api.spotify.com/v1/albums/"+this.state.album,
         success: function (response) {
@@ -24,18 +29,19 @@ var SpotAlbum = React.createClass({
             } );
         }.bind(this),
         complete: function() {
-          this.getTracks();
+          this._getTracks();
         }.bind(this)
     }); 
+ 
   },
-  getTracks: function() {
+  _getTracks: function() {
     
     var trackAudio = this.state.albuminfo.tracks.items.map( function(i,v) {
       return i.id;
     }).join(',') 
     
-    var accessToken = "BQAfmdBBE0oJFGrmIjhVuxZFwS0FSQvJmsX2gO63RJ8u-c7h2oX-pUeDDYROo_CVh2oWG8vnCRTNq-ODibkKrcYUK981jwDxvSLETYwMCOD6ZBpaMPdx0_IfGDfKaQsae4Ne4FHLPc2r1XA";
-    
+    var accessToken = "BQDdlQQ0WZFCDN66iGdimX0SuVAKn69gvHGnfvgiBoQqnYEB5290uvw2C3UxahACgF406Fc2cYg9XOyJ6uy1vif4oOf7nJD5rR-U_sPFP4vc1z7dqYFmklaKKfeMeJbzaZVJu2MdcFF3PoU";
+
     $.ajax({
         url: "https://api.spotify.com/v1/audio-features?ids="+trackAudio ,
         headers: {
@@ -58,22 +64,24 @@ var SpotAlbum = React.createClass({
             } );
         }.bind(this)
       }); 
+
+     $.ajax({
+        url: "https://api.spotify.com/v1/artists/"+ this.state.albuminfo.artists[0].id +"/related-artists",
+        success: function (response) {
+          console.log(response)
+            this.setState( {
+              related: response,
+              relatedLoading: false
+            } );
+        }.bind(this)
+    });
   },
 
   componentDidMount: function() {
-  
-  },
-  
-  handleChange: function(e) {
- 
-  },
-  
-  handleClick: function(e,i,b,c) {
- 
+    
   },
 
   componentWillUpdate:function() {
-     
   },
 
   render: function () { 
@@ -87,6 +95,12 @@ var SpotAlbum = React.createClass({
             audio={this.state.trackAudio}
             track={this.state.trackinfo}
           />
+        
+        <RelatedArtists
+            related={this.state.related}
+            isLoading={this.state.relatedLoading} 
+        />
+           
       </div>
       )
  

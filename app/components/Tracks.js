@@ -16,40 +16,42 @@ function Track (props) {
                 <li key={v} className="track-item">
                     <div className="track-item__content">
                         <div className="track-item__main">
-                            <span className="track-item__number">{i.track_number}</span>
-                            <h3 className="track-item__name">{i.name}</h3>
-                            <audio controls>
-                                <source src={i.preview_url}/>
-                            </audio>
+                            <h3 className="track-item__name"><span className="track-item__number">{i.track_number}</span>{i.name}</h3>
+                            <div className="track-item__preview">
+                                <audio controls>
+                                    <source src={i.preview_url}/>
+                                </audio>
+                            </div>
+                            
                         </div>
                         <div className="track-info">
                             <ul className="track-info__list">
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Danceability:</h3>
-                                    <p className="track-into__value">{props.audio[v].danceability} <span className="track-info__measure">/1.0</span></p>
+                                    <p className="track-info__value">{props.audio[v].danceability} <span className="track-info__measure">/1.0</span></p>
                                 </li>
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Acousticness:</h3>
-                                    <p className="track-into__value">{props.audio[v].acousticness} <span className="track-info__measure">/1.0</span></p>
+                                    <p className="track-info__value">{props.audio[v].acousticness} <span className="track-info__measure">/1.0</span></p>
                                 </li>
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Energy:</h3>
-                                    <p className="track-into__value">{props.audio[v].energy} <span className="track-info__measure">/1.0</span></p>
+                                    <p className="track-info__value">{props.audio[v].energy} <span className="track-info__measure">/1.0</span></p>
                                 </li>
 
                                  <li className="track-info__item">
                                     <h3 className="track-info__label">Instrumentalness:</h3>
-                                    <p className="track-into__value">{props.audio[v].instrumentalness}</p>
+                                    <p className="track-info__value">{props.audio[v].instrumentalness}</p>
                                 </li>
 
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Loudness:</h3>
-                                    <p className="track-into__value">{props.audio[v].loudness} <span className="track-info__measure">/db</span></p>
+                                    <p className="track-info__value">{props.audio[v].loudness} <span className="track-info__measure">/db</span></p>
                                 </li>
                                 
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Tempo:</h3>
-                                    <p className="track-into__value">{props.audio[v].tempo} <span className="track-info__measure">/bpm</span></p>
+                                    <p className="track-info__value">{props.audio[v].tempo} <span className="track-info__measure">/bpm</span></p>
                                 </li>
 
                                  

@@ -80,6 +80,107 @@ table {
 #detail-map__map {
   height: 100%; }
 
+@-webkit-keyframes loading {
+  0% {
+    opacity: 0.5;
+    transform: scale(1); }
+  25% {
+    transform: scale(1.25);
+    opacity: 1; }
+  75% {
+    transform: scale(0.75);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 0.5; } }
+
+@-moz-keyframes loading {
+  0% {
+    opacity: 0.5;
+    transform: scale(1); }
+  25% {
+    transform: scale(1.25);
+    opacity: 1; }
+  75% {
+    transform: scale(0.75);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 0.5; } }
+
+@-ms-keyframes loading {
+  0% {
+    opacity: 0.5;
+    transform: scale(1); }
+  25% {
+    transform: scale(1.25);
+    opacity: 1; }
+  75% {
+    transform: scale(0.75);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 0.5; } }
+
+@-o-keyframes loading {
+  0% {
+    opacity: 0.5;
+    transform: scale(1); }
+  25% {
+    transform: scale(1.25);
+    opacity: 1; }
+  75% {
+    transform: scale(0.75);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 0.5; } }
+
+@keyframes {
+  0% {
+    opacity: 0.5;
+    transform: scale(1); }
+  50% {
+    transform: scale(1.25);
+    opacity: 1; }
+  100% {
+    transform: scale(1);
+    opacity: 0.5; } }
+
+.loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center; }
+  .loader svg {
+    overflow: visible; }
+  .loader .circle {
+    transform-origin: center center;
+    -webkit-animation: loading 1s  infinite;
+    -moz-animation: loading 1s  infinite;
+    -ms-animation: loading 1s  infinite;
+    -o-animation: loading 1s  infinite;
+    animation: loading 1s  infinite; }
+    .loader .circle:nth-child(2) {
+      -webkit-animation: loading 0.75s  infinite reverse;
+      -moz-animation: loading 0.75s  infinite reverse;
+      -ms-animation: loading 0.75s  infinite reverse;
+      -o-animation: loading 0.75s  infinite reverse;
+      animation: loading 0.75s  infinite reverse; }
+    .loader .circle:nth-child(3) {
+      -webkit-animation: loading 1s  infinite reverse;
+      -moz-animation: loading 1s  infinite reverse;
+      -ms-animation: loading 1s  infinite reverse;
+      -o-animation: loading 1s  infinite reverse;
+      animation: loading 1s  infinite reverse; }
+  .loader__label {
+    font-family: "Montserrat", Helvetica, sans-serif;
+    color: #CE4F4F;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-top: 15px; }
+
 .form-desc-wrap {
   height: 100%;
   background: #35424d;
@@ -999,3 +1100,57 @@ table {
     font-style: italic; }
   .album-info__pop {
     font-family: "Montserrat", Helvetica, sans-serif; }
+
+.track-wrap {
+  width: 90%;
+  margin: 0 auto;
+  padding: 3em 0;
+  max-width: 900px; }
+
+.track-list__title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  letter-spacing: -0.025em; }
+
+.track-item {
+  position: relative;
+  padding: 30px 0; }
+  .track-item + .track-item {
+    border-top: 2px solid #acb4be; }
+  .track-item__number {
+    font-style: italic;
+    color: #CE4F4F;
+    font-size: 75%;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: super;
+    margin-right: 10px; }
+  .track-item__preview {
+    text-align: center; }
+  .track-item__name {
+    font-size: 2.75em;
+    text-align: center;
+    line-height: 1.25;
+    margin: 0 0 30px; }
+
+.track-info__list {
+  display: flex;
+  flex-wrap: wrap; }
+
+.track-info__item {
+  flex-basis: 33.333%;
+  text-align: center;
+  padding: 30px; }
+
+.track-info__label {
+  text-transform: uppercase;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  color: #2f353c; }
+
+.track-info__value {
+  font-size: 3em;
+  letter-spacing: -0.05em; }
+
+.track-info__measure {
+  font-size: 50%; }

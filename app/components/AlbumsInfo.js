@@ -1,13 +1,15 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
 var ReactRouter = require("react-router");
+var Loader = require('../components/Loader');
+
  
 var Link = ReactRouter.Link;
 
  // <img src={info.images[0].url} alt=""/>
 function Albums (props) {
     return props.isLoading === true
-    ? <p>LOADING</p>
+    ? <Loader />
     : <div>
             <h2 className="albums-title">Albums</h2>
             <ul className="albums__list">

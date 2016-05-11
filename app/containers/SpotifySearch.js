@@ -29,7 +29,7 @@ var SpotifyContainer = React.createClass({
   
   handleClick: function(e,i,b,c) {
       e.preventDefault();
-      console.log(c);
+ 
   },
   
   handleSubmit: function (e) {

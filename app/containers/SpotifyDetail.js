@@ -10,23 +10,32 @@ var SpotifyDetail = React.createClass({
 
   getInitialState: function () {
     return {
-      artist: this.props.params.artist,
+      artist: "",
       feature: {},
       albums: {},
+      related:{},
       artistLoading: true,
       albumsLoading: true,
       relatedLoading: true
     } 
   },
   componentWillMount:function(){
- 
+   this.setState({
+    artist: this.props.routeParams.artist
+   });
+    
   },
   
   componentDidMount: function() {
+     this._getInfo(this.props.routeParams.artist);
+     $(window).scrollTop();
+  },
+  
+  _getInfo:function(i,v ) {
+    console.log(i);
     $.ajax({
-        url: "https://api.spotify.com/v1/artists/"+this.state.artist+"",
+        url: "https://api.spotify.com/v1/artists/"+ i +"",
         success: function (response) {
-          console.log(response)
              this.setState({
               feature: response,
               artistLoading: false
@@ -35,9 +44,8 @@ var SpotifyDetail = React.createClass({
     }); 
 
      $.ajax({
-        url: "https://api.spotify.com/v1/artists/"+this.state.artist +"/albums",
+        url: "https://api.spotify.com/v1/artists/"+ i +"/albums",
         success: function (response) {
-          console.log(response )
             this.setState( {
               albums: response,
               albumsLoading: false
@@ -46,19 +54,15 @@ var SpotifyDetail = React.createClass({
     }); 
     
      $.ajax({
-        url: "https://api.spotify.com/v1/artists/"+this.state.artist +"/related-artists",
+        url: "https://api.spotify.com/v1/artists/"+ i +"/related-artists",
         success: function (response) {
-          console.log(response )
             this.setState( {
               related: response,
               relatedLoading: false
             } );
         }.bind(this)
     });
-
-
   },
-
   componentWillUpdate:function(id) {
  
   },
@@ -69,14 +73,9 @@ var SpotifyDetail = React.createClass({
       artistLoading: true,
       albumsLoading: true,
       relatedLoading: true
-    })
-
-    this.componentDidMount();
-  },
-
- handleClick:function(e, id) {  
+    }, this._getInfo(i.routeParams.artist) );
  
- },
+  },
 
   render: function () { 
     return (

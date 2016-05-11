@@ -1,9 +1,10 @@
 var React = require('react');
+var Loader = require('../components/Loader');
 var PropTypes = React.PropTypes;
  
 function ArtistInfo (props) {
     return props.isLoading === true
-    ? <p>LOADING</p>
+    ? <Loader />
     : <div className="artist-info">
         <div className="artist-info__image-wrap">
             <img src={props.info.images[0].url} alt="" className="artist-info__image"/>

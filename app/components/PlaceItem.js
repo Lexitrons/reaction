@@ -5,8 +5,6 @@ var ReactRouter = require("react-router");
 var Link = ReactRouter.Link;
 
 function PlaceItem (props) {
-	console.log( props );
-        
         return (
             <li key={props.key} className="place__item">
                 <Link className="place__link" 

@@ -2,7 +2,6 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 
 function SpotForm (props) {
-    console.log(props)
     return (
         <div className="spot-wrap">
             <div className="spot">

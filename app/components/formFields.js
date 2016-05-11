@@ -1,9 +1,10 @@
 var React = require('react');
+var Loader = require('../components/Loader');
 var PropTypes = React.PropTypes;
 
 function FormFields (props) {
     return props.isLoading === true
-    ? <p>LOADING</p>
+    ? <Loader />
     : <div className="form-wrap">
             
             <form onSubmit={props.onSubmit} className="form">
