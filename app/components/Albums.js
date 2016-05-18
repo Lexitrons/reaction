@@ -15,7 +15,7 @@ function Albums (props) {
                 return( 
                     <li key={index} className="albums-detail__item">
                         <Link  to={{ pathname: '/album/' + info.id }}  className="albums-detail__link">
-                            <img src={info.images[0].url} alt={info.name} className="albums-detail__img"/>
+                            <img src={info.images[1].url} alt={info.name} className="albums-detail__img"/>
                             <h3 className="albums-detail__name">{info.name}</h3>
                         </Link>
                     </li>

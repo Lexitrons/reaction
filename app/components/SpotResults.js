@@ -11,7 +11,7 @@ function SpotResults (props) {
           
           <Link  to={{ pathname: '/music/artist/' + props.results.id }}  className="artist__link">
               <div className="artist__img-wrap">
-                  {props.results.images.length > 0 && <img className="artist__img" src={props.results.images[0].url} alt=""/> }
+                  {props.results.images.length > 0 && <img className="artist__img" src={props.results.images[1].url} alt=""/> }
               </div>
             <div className="artist__info">
                 <h3 className="artist__name">

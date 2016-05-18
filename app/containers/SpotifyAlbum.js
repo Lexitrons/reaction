@@ -4,6 +4,7 @@ var $ = require('jquery');
 var AlbumDetail = require('../components/AlbumDetail');
 var TrackSingle = require('../components/Tracks');
 var RelatedArtists = require('../components/RelatedArtists');
+var Back = require('../components/Back');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var SpotAlbum = React.createClass({
@@ -40,7 +41,7 @@ var SpotAlbum = React.createClass({
       return i.id;
     }).join(',') 
     
-    var accessToken = "BQDdlQQ0WZFCDN66iGdimX0SuVAKn69gvHGnfvgiBoQqnYEB5290uvw2C3UxahACgF406Fc2cYg9XOyJ6uy1vif4oOf7nJD5rR-U_sPFP4vc1z7dqYFmklaKKfeMeJbzaZVJu2MdcFF3PoU";
+    var accessToken = "BQBOmOel7lCW2KGgvH2qi_pBxrryvdirxmPvFJ9eKlb43MaBnwSa2_ffkBGdfVTPYqlzW34NHGcmKQR_Ie_fNR4tHUuCdriVgIbRpOzi0xPEk9oHz_zHr7uIYi04glVZqUmlbioPEJAX37Y";
 
     $.ajax({
         url: "https://api.spotify.com/v1/audio-features?ids="+trackAudio ,
@@ -84,6 +85,7 @@ var SpotAlbum = React.createClass({
   componentWillUpdate:function() {
   },
 
+
   render: function () { 
     return (
       <div className="main-content">
@@ -100,7 +102,7 @@ var SpotAlbum = React.createClass({
             related={this.state.related}
             isLoading={this.state.relatedLoading} 
         />
-           
+        <Back />
       </div>
       )
  

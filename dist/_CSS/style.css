@@ -181,6 +181,23 @@ table {
     letter-spacing: 0.25em;
     margin-top: 15px; }
 
+.back__button {
+  position: fixed;
+  right: 0;
+  bottom: 10%;
+  z-index: 9999;
+  padding: 10px;
+  background: #66c5c6;
+  color: #ffffff;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  text-decoration: none; }
+  .back__button:hover {
+    opacity: 1; }
+
 .form-desc-wrap {
   height: 100%;
   background: #35424d;
@@ -686,10 +703,13 @@ table {
   display: flex;
   height: 100%;
   overflow-y: scroll;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: flex-start;
+  align-content: flex-start; }
 
 .artist {
-  flex-basis: 33%;
+  flex-basis: 50%;
   padding: 10px;
   transform: translatez(0);
   transition: all 0.25s ease; }
@@ -867,20 +887,16 @@ table {
       -o-transition-duration: 700ms;
       transition-duration: 700ms; }
   .artist__link {
-    display: flex;
-    flex-direction: column;
-    background: #ffffff;
-    border: 3px solid #ffffff;
-    box-shadow: 2px 2px 5px rgba(39, 39, 39, 0.8);
+    display: block;
+    position: relative;
+    background: #2f353c;
+    overflow: hidden;
     text-decoration: none;
     transform: translateZ(0);
-    transition: all 0.25s ease;
-    height: 178px; }
-    .artist__link:hover {
-      box-shadow: 2px 2px 8px rgba(39, 39, 39, 0.7); }
+    transition: all 0.25s ease; }
   .artist__img-wrap {
     position: relative;
-    padding-top: 50%;
+    padding-top: 62.5%;
     overflow: hidden;
     width: 100%; }
   .artist__img {
@@ -890,19 +906,43 @@ table {
     width: 100%;
     transform: translate(-50%, -50%); }
   .artist__info {
-    padding: 10px; }
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 20%;
+    background: -moz-linear-gradient(top, rgba(39, 39, 39, 0) 0%, rgba(39, 39, 39, 0.65) 100%);
+    background: -webkit-linear-gradient(top, rgba(39, 39, 39, 0) 0%, rgba(39, 39, 39, 0.65) 100%);
+    background: linear-gradient(to bottom, rgba(39, 39, 39, 0) 0%, rgba(39, 39, 39, 0.65) 100%);
+    transition: all 0.15s linear;
+    transform: translateY(100%); }
+    .artist__link:hover .artist__info {
+      transform: translateY(0%); }
   .artist__name {
+    position: relative;
     font-family: "Montserrat", Helvetica, sans-serif;
-    color: #2f353c;
-    font-size: 14px; }
+    color: #ffffff;
+    font-size: 14px;
+    transform: translateY(25px);
+    transition: all 0.15s linear;
+    transition-delay: 0.1s; }
+    .artist__link:hover .artist__name {
+      transform: translateY(0%); }
 
-.artist-genres__item {
-  display: inline-block;
-  font-size: 10px;
-  font-family: "Montserrat", Helvetica, sans-serif;
-  color: #677483; }
-  .artist-genres__item + .artist-genres__item {
-    margin-left: 5px; }
+.artist-genres {
+  transform: translateY(25px);
+  transition: all 0.15s linear;
+  transition-delay: 0.12s; }
+  .artist__link:hover .artist-genres {
+    transform: translateY(0%); }
+  .artist-genres__item {
+    display: inline-block;
+    font-size: 10px;
+    font-family: "Montserrat", Helvetica, sans-serif;
+    color: white; }
+    .artist-genres__item + .artist-genres__item {
+      margin-left: 5px; }
 
 .spot-wrap {
   height: 100%;
@@ -954,11 +994,15 @@ table {
   position: relative; }
   .artist-info__image-wrap {
     position: relative;
-    max-height: 75vh;
+    height: 95vh;
     overflow: hidden; }
   .artist-info__image {
     display: block;
-    width: 100%; }
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
   .artist-info__content {
     position: absolute;
     bottom: 10%;
@@ -1032,7 +1076,7 @@ table {
   flex-wrap: wrap; }
   .related__item {
     flex-basis: 33%;
-    padding: 20px;
+    padding: 10px;
     text-align: left; }
   .related__link {
     text-decoration: none;
@@ -1150,7 +1194,8 @@ table {
 
 .track-info__value {
   font-size: 3em;
-  letter-spacing: -0.05em; }
+  letter-spacing: -0.05em;
+  color: #CE4F4F; }
 
 .track-info__measure {
   font-size: 50%; }

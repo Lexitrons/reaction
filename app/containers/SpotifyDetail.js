@@ -4,6 +4,7 @@ var ReactRouter = require('react-router');
 var ArtistInfo = require('../components/ArtistInfo');
 var Albums = require('../components/Albums');
 var RelatedArtists = require('../components/RelatedArtists');
+var Back = require('../components/Back');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var SpotifyDetail = React.createClass({
@@ -137,7 +138,7 @@ var SpotifyDetail = React.createClass({
 
 
               </ReactCSSTransitionGroup>
-
+    <Back />
     </div>
     )
   }

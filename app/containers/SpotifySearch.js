@@ -2,6 +2,7 @@ var React = require('react');
 var $ = require('jquery');
 var SpotForm = require('../components/SpotForm');
 var SpotResults = require('../components/SpotResults');
+
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
 var SpotifyContainer = React.createClass({
@@ -112,7 +113,6 @@ var SpotifyContainer = React.createClass({
             
         </ul>
       </ReactCSSTransitionGroup>
- 
       </div>
       )
  

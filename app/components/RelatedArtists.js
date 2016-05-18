@@ -17,7 +17,7 @@ function RelatedArtists (props) {
                             <Link  to={{ pathname: '/music/artist/' + info.id }}  className="related__link">
                                <div className="related__img-wrap">
                                     {info.images.length > 0 && 
-                                        <img src={info.images[0].url} alt={info.name} className="albums-detail__img"/>
+                                        <img src={info.images[1].url} alt={info.name} className="albums-detail__img"/>
                                     }
                                </div>
                                 {info.name}

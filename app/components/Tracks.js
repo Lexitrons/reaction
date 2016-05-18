@@ -6,6 +6,22 @@ var Link = ReactRouter.Link;
 
 function Track (props) {
     console.log(props);
+
+    var time = function(s) {
+      function addZ(n) {
+        return (n<10? '0':'') + n;
+      }
+
+      var ms = s % 1000;
+      s = (s - ms) / 1000;
+      var secs = s % 60;
+      s = (s - secs) / 60;
+      var mins = s % 60;
+      var hrs = (s - mins) / 60;
+
+      return addZ(mins) + ':' + addZ(secs);
+    }
+
     return (
         <div className="track-wrap">
         <h2 className="track-list__title">Tracklist</h2>
@@ -22,17 +38,23 @@ function Track (props) {
                                     <source src={i.preview_url}/>
                                 </audio>
                             </div>
-                            
+                           
                         </div>
+                        
                         <div className="track-info">
+
                             <ul className="track-info__list">
+                             <li className="track-info__item">
+                                    <h3 className="track-info__label">Popularity:</h3>
+                                    <p className="track-info__value">{i.popularity}</p>
+                                </li>
+                                <li className="track-info__item">
+                                    <h3 className="track-info__label">Length:</h3>
+                                    <p className="track-info__value">{time(i.duration_ms)}</p>
+                                </li>
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Danceability:</h3>
                                     <p className="track-info__value">{props.audio[v].danceability} <span className="track-info__measure">/1.0</span></p>
-                                </li>
-                                <li className="track-info__item">
-                                    <h3 className="track-info__label">Acousticness:</h3>
-                                    <p className="track-info__value">{props.audio[v].acousticness} <span className="track-info__measure">/1.0</span></p>
                                 </li>
                                 <li className="track-info__item">
                                     <h3 className="track-info__label">Energy:</h3>
