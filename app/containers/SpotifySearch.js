@@ -35,6 +35,11 @@ var SpotifyContainer = React.createClass({
   
   handleSubmit: function (e) {
     e.preventDefault();
+    
+    this.setState({
+        results: []
+    });
+    
     $.ajax({
         url: 'https://api.spotify.com/v1/search',
         data: {
@@ -81,6 +86,7 @@ var SpotifyContainer = React.createClass({
           onChange={this.handleChange}
         />
       </ReactCSSTransitionGroup>
+      <div className="right-column">
        <ReactCSSTransitionGroup 
                 transitionName={{
                     enter: 'appear',
@@ -90,15 +96,15 @@ var SpotifyContainer = React.createClass({
                     appear: 'appear',
                     appearActive: 'appear-active'
                 }}
-                transitionEnterTimeout={200}
-                transitionLeaveTimeout={200}
-                transitionAppearTimeout={200}
+                transitionEnterTimeout={1000}
+                transitionLeaveTimeout={700}
+                transitionAppearTimeout={700}
                 transitionLeave={true}
                 transitionAppear={true}
-                component='div' 
-                className="right-column"
+                component='ul' 
+                className=" arist-list "
                 >
-                <ul className="arist-list">
+ 
               
               {this.state.results.map( function( info, index) {
                         return (
@@ -111,8 +117,8 @@ var SpotifyContainer = React.createClass({
                     }.bind(this))}
 
             
-        </ul>
       </ReactCSSTransitionGroup>
+      </div>
       </div>
       )
  

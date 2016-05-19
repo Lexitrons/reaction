@@ -715,174 +715,654 @@ table {
   transition: all 0.25s ease; }
   .artist.appear {
     transition: all 1s ease;
-    transform: translateY(-99em); }
-    .artist.appear.place__item:nth-child(1) {
+    transform: translateY(99em); }
+    .artist.appear:nth-child(20) {
       -webkit-transition-duration: 130ms;
       -o-transition-duration: 130ms;
       transition-duration: 130ms; }
-    .artist.appear.place__item:nth-child(2) {
+    .artist.appear:nth-child(19) {
       -webkit-transition-duration: 160ms;
       -o-transition-duration: 160ms;
       transition-duration: 160ms; }
-    .artist.appear.place__item:nth-child(3) {
+    .artist.appear:nth-child(18) {
       -webkit-transition-duration: 190ms;
       -o-transition-duration: 190ms;
       transition-duration: 190ms; }
-    .artist.appear.place__item:nth-child(4) {
+    .artist.appear:nth-child(17) {
       -webkit-transition-duration: 220ms;
       -o-transition-duration: 220ms;
       transition-duration: 220ms; }
-    .artist.appear.place__item:nth-child(5) {
+    .artist.appear:nth-child(16) {
       -webkit-transition-duration: 250ms;
       -o-transition-duration: 250ms;
       transition-duration: 250ms; }
-    .artist.appear.place__item:nth-child(6) {
+    .artist.appear:nth-child(15) {
       -webkit-transition-duration: 280ms;
       -o-transition-duration: 280ms;
       transition-duration: 280ms; }
-    .artist.appear.place__item:nth-child(7) {
+    .artist.appear:nth-child(14) {
       -webkit-transition-duration: 310ms;
       -o-transition-duration: 310ms;
       transition-duration: 310ms; }
-    .artist.appear.place__item:nth-child(8) {
+    .artist.appear:nth-child(13) {
       -webkit-transition-duration: 340ms;
       -o-transition-duration: 340ms;
       transition-duration: 340ms; }
-    .artist.appear.place__item:nth-child(9) {
+    .artist.appear:nth-child(12) {
       -webkit-transition-duration: 370ms;
       -o-transition-duration: 370ms;
       transition-duration: 370ms; }
-    .artist.appear.place__item:nth-child(10) {
+    .artist.appear:nth-child(11) {
       -webkit-transition-duration: 400ms;
       -o-transition-duration: 400ms;
       transition-duration: 400ms; }
-    .artist.appear.place__item:nth-child(11) {
+    .artist.appear:nth-child(10) {
       -webkit-transition-duration: 430ms;
       -o-transition-duration: 430ms;
       transition-duration: 430ms; }
-    .artist.appear.place__item:nth-child(12) {
+    .artist.appear:nth-child(9) {
       -webkit-transition-duration: 460ms;
       -o-transition-duration: 460ms;
       transition-duration: 460ms; }
-    .artist.appear.place__item:nth-child(13) {
+    .artist.appear:nth-child(8) {
       -webkit-transition-duration: 490ms;
       -o-transition-duration: 490ms;
       transition-duration: 490ms; }
-    .artist.appear.place__item:nth-child(14) {
+    .artist.appear:nth-child(7) {
       -webkit-transition-duration: 520ms;
       -o-transition-duration: 520ms;
       transition-duration: 520ms; }
-    .artist.appear.place__item:nth-child(15) {
+    .artist.appear:nth-child(6) {
       -webkit-transition-duration: 550ms;
       -o-transition-duration: 550ms;
       transition-duration: 550ms; }
-    .artist.appear.place__item:nth-child(16) {
+    .artist.appear:nth-child(5) {
       -webkit-transition-duration: 580ms;
       -o-transition-duration: 580ms;
       transition-duration: 580ms; }
-    .artist.appear.place__item:nth-child(17) {
+    .artist.appear:nth-child(4) {
       -webkit-transition-duration: 610ms;
       -o-transition-duration: 610ms;
       transition-duration: 610ms; }
-    .artist.appear.place__item:nth-child(18) {
+    .artist.appear:nth-child(3) {
       -webkit-transition-duration: 640ms;
       -o-transition-duration: 640ms;
       transition-duration: 640ms; }
-    .artist.appear.place__item:nth-child(19) {
+    .artist.appear:nth-child(2) {
       -webkit-transition-duration: 670ms;
       -o-transition-duration: 670ms;
       transition-duration: 670ms; }
-    .artist.appear.place__item:nth-child(20) {
+    .artist.appear:nth-child(1) {
       -webkit-transition-duration: 700ms;
       -o-transition-duration: 700ms;
       transition-duration: 700ms; }
   .artist.appear.appear-active {
     transition: all 1s ease;
     transform: translateY(0); }
-  .artist.leave {
-    opacity: 1;
-    transition: all 1s ease;
-    transform: translateY(0); }
-  .artist.leave.leave-active {
-    transition: all 1s ease;
-    transform: translateY(-99em); }
-    .artist.leave.leave-active.place__item:nth-child(20) {
-      -webkit-transition-duration: 130ms;
-      -o-transition-duration: 130ms;
-      transition-duration: 130ms; }
-    .artist.leave.leave-active.place__item:nth-child(19) {
-      -webkit-transition-duration: 160ms;
-      -o-transition-duration: 160ms;
-      transition-duration: 160ms; }
-    .artist.leave.leave-active.place__item:nth-child(18) {
-      -webkit-transition-duration: 190ms;
-      -o-transition-duration: 190ms;
-      transition-duration: 190ms; }
-    .artist.leave.leave-active.place__item:nth-child(17) {
-      -webkit-transition-duration: 220ms;
-      -o-transition-duration: 220ms;
-      transition-duration: 220ms; }
-    .artist.leave.leave-active.place__item:nth-child(16) {
+    .artist.appear.appear-active:nth-child(1) {
+      -webkit-transition-duration: 150ms;
+      -o-transition-duration: 150ms;
+      transition-duration: 150ms; }
+    .artist.appear.appear-active:nth-child(2) {
+      -webkit-transition-duration: 200ms;
+      -o-transition-duration: 200ms;
+      transition-duration: 200ms; }
+    .artist.appear.appear-active:nth-child(3) {
       -webkit-transition-duration: 250ms;
       -o-transition-duration: 250ms;
       transition-duration: 250ms; }
-    .artist.leave.leave-active.place__item:nth-child(15) {
-      -webkit-transition-duration: 280ms;
-      -o-transition-duration: 280ms;
-      transition-duration: 280ms; }
-    .artist.leave.leave-active.place__item:nth-child(14) {
-      -webkit-transition-duration: 310ms;
-      -o-transition-duration: 310ms;
-      transition-duration: 310ms; }
-    .artist.leave.leave-active.place__item:nth-child(13) {
-      -webkit-transition-duration: 340ms;
-      -o-transition-duration: 340ms;
-      transition-duration: 340ms; }
-    .artist.leave.leave-active.place__item:nth-child(12) {
-      -webkit-transition-duration: 370ms;
-      -o-transition-duration: 370ms;
-      transition-duration: 370ms; }
-    .artist.leave.leave-active.place__item:nth-child(11) {
+    .artist.appear.appear-active:nth-child(4) {
+      -webkit-transition-duration: 300ms;
+      -o-transition-duration: 300ms;
+      transition-duration: 300ms; }
+    .artist.appear.appear-active:nth-child(5) {
+      -webkit-transition-duration: 350ms;
+      -o-transition-duration: 350ms;
+      transition-duration: 350ms; }
+    .artist.appear.appear-active:nth-child(6) {
       -webkit-transition-duration: 400ms;
       -o-transition-duration: 400ms;
       transition-duration: 400ms; }
-    .artist.leave.leave-active.place__item:nth-child(10) {
-      -webkit-transition-duration: 430ms;
-      -o-transition-duration: 430ms;
-      transition-duration: 430ms; }
-    .artist.leave.leave-active.place__item:nth-child(9) {
-      -webkit-transition-duration: 460ms;
-      -o-transition-duration: 460ms;
-      transition-duration: 460ms; }
-    .artist.leave.leave-active.place__item:nth-child(8) {
-      -webkit-transition-duration: 490ms;
-      -o-transition-duration: 490ms;
-      transition-duration: 490ms; }
-    .artist.leave.leave-active.place__item:nth-child(7) {
-      -webkit-transition-duration: 520ms;
-      -o-transition-duration: 520ms;
-      transition-duration: 520ms; }
-    .artist.leave.leave-active.place__item:nth-child(6) {
+    .artist.appear.appear-active:nth-child(7) {
+      -webkit-transition-duration: 450ms;
+      -o-transition-duration: 450ms;
+      transition-duration: 450ms; }
+    .artist.appear.appear-active:nth-child(8) {
+      -webkit-transition-duration: 500ms;
+      -o-transition-duration: 500ms;
+      transition-duration: 500ms; }
+    .artist.appear.appear-active:nth-child(9) {
       -webkit-transition-duration: 550ms;
       -o-transition-duration: 550ms;
       transition-duration: 550ms; }
-    .artist.leave.leave-active.place__item:nth-child(5) {
+    .artist.appear.appear-active:nth-child(10) {
+      -webkit-transition-duration: 600ms;
+      -o-transition-duration: 600ms;
+      transition-duration: 600ms; }
+    .artist.appear.appear-active:nth-child(11) {
+      -webkit-transition-duration: 650ms;
+      -o-transition-duration: 650ms;
+      transition-duration: 650ms; }
+    .artist.appear.appear-active:nth-child(12) {
+      -webkit-transition-duration: 700ms;
+      -o-transition-duration: 700ms;
+      transition-duration: 700ms; }
+    .artist.appear.appear-active:nth-child(13) {
+      -webkit-transition-duration: 750ms;
+      -o-transition-duration: 750ms;
+      transition-duration: 750ms; }
+    .artist.appear.appear-active:nth-child(14) {
+      -webkit-transition-duration: 800ms;
+      -o-transition-duration: 800ms;
+      transition-duration: 800ms; }
+    .artist.appear.appear-active:nth-child(15) {
+      -webkit-transition-duration: 850ms;
+      -o-transition-duration: 850ms;
+      transition-duration: 850ms; }
+    .artist.appear.appear-active:nth-child(16) {
+      -webkit-transition-duration: 900ms;
+      -o-transition-duration: 900ms;
+      transition-duration: 900ms; }
+    .artist.appear.appear-active:nth-child(17) {
+      -webkit-transition-duration: 950ms;
+      -o-transition-duration: 950ms;
+      transition-duration: 950ms; }
+    .artist.appear.appear-active:nth-child(18) {
+      -webkit-transition-duration: 1000ms;
+      -o-transition-duration: 1000ms;
+      transition-duration: 1000ms; }
+    .artist.appear.appear-active:nth-child(19) {
+      -webkit-transition-duration: 1050ms;
+      -o-transition-duration: 1050ms;
+      transition-duration: 1050ms; }
+    .artist.appear.appear-active:nth-child(20) {
+      -webkit-transition-duration: 1100ms;
+      -o-transition-duration: 1100ms;
+      transition-duration: 1100ms; }
+    .artist.appear.appear-active:nth-child(21) {
+      -webkit-transition-duration: 1150ms;
+      -o-transition-duration: 1150ms;
+      transition-duration: 1150ms; }
+    .artist.appear.appear-active:nth-child(22) {
+      -webkit-transition-duration: 1200ms;
+      -o-transition-duration: 1200ms;
+      transition-duration: 1200ms; }
+    .artist.appear.appear-active:nth-child(23) {
+      -webkit-transition-duration: 1250ms;
+      -o-transition-duration: 1250ms;
+      transition-duration: 1250ms; }
+    .artist.appear.appear-active:nth-child(24) {
+      -webkit-transition-duration: 1300ms;
+      -o-transition-duration: 1300ms;
+      transition-duration: 1300ms; }
+    .artist.appear.appear-active:nth-child(25) {
+      -webkit-transition-duration: 1350ms;
+      -o-transition-duration: 1350ms;
+      transition-duration: 1350ms; }
+    .artist.appear.appear-active:nth-child(26) {
+      -webkit-transition-duration: 1400ms;
+      -o-transition-duration: 1400ms;
+      transition-duration: 1400ms; }
+    .artist.appear.appear-active:nth-child(27) {
+      -webkit-transition-duration: 1450ms;
+      -o-transition-duration: 1450ms;
+      transition-duration: 1450ms; }
+    .artist.appear.appear-active:nth-child(28) {
+      -webkit-transition-duration: 1500ms;
+      -o-transition-duration: 1500ms;
+      transition-duration: 1500ms; }
+    .artist.appear.appear-active:nth-child(29) {
+      -webkit-transition-duration: 1550ms;
+      -o-transition-duration: 1550ms;
+      transition-duration: 1550ms; }
+    .artist.appear.appear-active:nth-child(30) {
+      -webkit-transition-duration: 1600ms;
+      -o-transition-duration: 1600ms;
+      transition-duration: 1600ms; }
+    .artist.appear.appear-active:nth-child(31) {
+      -webkit-transition-duration: 1650ms;
+      -o-transition-duration: 1650ms;
+      transition-duration: 1650ms; }
+    .artist.appear.appear-active:nth-child(32) {
+      -webkit-transition-duration: 1700ms;
+      -o-transition-duration: 1700ms;
+      transition-duration: 1700ms; }
+    .artist.appear.appear-active:nth-child(33) {
+      -webkit-transition-duration: 1750ms;
+      -o-transition-duration: 1750ms;
+      transition-duration: 1750ms; }
+    .artist.appear.appear-active:nth-child(34) {
+      -webkit-transition-duration: 1800ms;
+      -o-transition-duration: 1800ms;
+      transition-duration: 1800ms; }
+    .artist.appear.appear-active:nth-child(35) {
+      -webkit-transition-duration: 1850ms;
+      -o-transition-duration: 1850ms;
+      transition-duration: 1850ms; }
+    .artist.appear.appear-active:nth-child(36) {
+      -webkit-transition-duration: 1900ms;
+      -o-transition-duration: 1900ms;
+      transition-duration: 1900ms; }
+    .artist.appear.appear-active:nth-child(37) {
+      -webkit-transition-duration: 1950ms;
+      -o-transition-duration: 1950ms;
+      transition-duration: 1950ms; }
+    .artist.appear.appear-active:nth-child(38) {
+      -webkit-transition-duration: 2000ms;
+      -o-transition-duration: 2000ms;
+      transition-duration: 2000ms; }
+    .artist.appear.appear-active:nth-child(39) {
+      -webkit-transition-duration: 2050ms;
+      -o-transition-duration: 2050ms;
+      transition-duration: 2050ms; }
+    .artist.appear.appear-active:nth-child(40) {
+      -webkit-transition-duration: 2100ms;
+      -o-transition-duration: 2100ms;
+      transition-duration: 2100ms; }
+    .artist.appear.appear-active:nth-child(41) {
+      -webkit-transition-duration: 2150ms;
+      -o-transition-duration: 2150ms;
+      transition-duration: 2150ms; }
+    .artist.appear.appear-active:nth-child(42) {
+      -webkit-transition-duration: 2200ms;
+      -o-transition-duration: 2200ms;
+      transition-duration: 2200ms; }
+    .artist.appear.appear-active:nth-child(43) {
+      -webkit-transition-duration: 2250ms;
+      -o-transition-duration: 2250ms;
+      transition-duration: 2250ms; }
+    .artist.appear.appear-active:nth-child(44) {
+      -webkit-transition-duration: 2300ms;
+      -o-transition-duration: 2300ms;
+      transition-duration: 2300ms; }
+    .artist.appear.appear-active:nth-child(45) {
+      -webkit-transition-duration: 2350ms;
+      -o-transition-duration: 2350ms;
+      transition-duration: 2350ms; }
+    .artist.appear.appear-active:nth-child(46) {
+      -webkit-transition-duration: 2400ms;
+      -o-transition-duration: 2400ms;
+      transition-duration: 2400ms; }
+    .artist.appear.appear-active:nth-child(47) {
+      -webkit-transition-duration: 2450ms;
+      -o-transition-duration: 2450ms;
+      transition-duration: 2450ms; }
+    .artist.appear.appear-active:nth-child(48) {
+      -webkit-transition-duration: 2500ms;
+      -o-transition-duration: 2500ms;
+      transition-duration: 2500ms; }
+    .artist.appear.appear-active:nth-child(49) {
+      -webkit-transition-duration: 2550ms;
+      -o-transition-duration: 2550ms;
+      transition-duration: 2550ms; }
+    .artist.appear.appear-active:nth-child(50) {
+      -webkit-transition-duration: 2600ms;
+      -o-transition-duration: 2600ms;
+      transition-duration: 2600ms; }
+    .artist.appear.appear-active:nth-child(51) {
+      -webkit-transition-duration: 2650ms;
+      -o-transition-duration: 2650ms;
+      transition-duration: 2650ms; }
+    .artist.appear.appear-active:nth-child(52) {
+      -webkit-transition-duration: 2700ms;
+      -o-transition-duration: 2700ms;
+      transition-duration: 2700ms; }
+    .artist.appear.appear-active:nth-child(53) {
+      -webkit-transition-duration: 2750ms;
+      -o-transition-duration: 2750ms;
+      transition-duration: 2750ms; }
+    .artist.appear.appear-active:nth-child(54) {
+      -webkit-transition-duration: 2800ms;
+      -o-transition-duration: 2800ms;
+      transition-duration: 2800ms; }
+    .artist.appear.appear-active:nth-child(55) {
+      -webkit-transition-duration: 2850ms;
+      -o-transition-duration: 2850ms;
+      transition-duration: 2850ms; }
+    .artist.appear.appear-active:nth-child(56) {
+      -webkit-transition-duration: 2900ms;
+      -o-transition-duration: 2900ms;
+      transition-duration: 2900ms; }
+    .artist.appear.appear-active:nth-child(57) {
+      -webkit-transition-duration: 2950ms;
+      -o-transition-duration: 2950ms;
+      transition-duration: 2950ms; }
+    .artist.appear.appear-active:nth-child(58) {
+      -webkit-transition-duration: 3000ms;
+      -o-transition-duration: 3000ms;
+      transition-duration: 3000ms; }
+    .artist.appear.appear-active:nth-child(59) {
+      -webkit-transition-duration: 3050ms;
+      -o-transition-duration: 3050ms;
+      transition-duration: 3050ms; }
+    .artist.appear.appear-active:nth-child(60) {
+      -webkit-transition-duration: 3100ms;
+      -o-transition-duration: 3100ms;
+      transition-duration: 3100ms; }
+    .artist.appear.appear-active:nth-child(61) {
+      -webkit-transition-duration: 3150ms;
+      -o-transition-duration: 3150ms;
+      transition-duration: 3150ms; }
+    .artist.appear.appear-active:nth-child(62) {
+      -webkit-transition-duration: 3200ms;
+      -o-transition-duration: 3200ms;
+      transition-duration: 3200ms; }
+    .artist.appear.appear-active:nth-child(63) {
+      -webkit-transition-duration: 3250ms;
+      -o-transition-duration: 3250ms;
+      transition-duration: 3250ms; }
+    .artist.appear.appear-active:nth-child(64) {
+      -webkit-transition-duration: 3300ms;
+      -o-transition-duration: 3300ms;
+      transition-duration: 3300ms; }
+    .artist.appear.appear-active:nth-child(65) {
+      -webkit-transition-duration: 3350ms;
+      -o-transition-duration: 3350ms;
+      transition-duration: 3350ms; }
+    .artist.appear.appear-active:nth-child(66) {
+      -webkit-transition-duration: 3400ms;
+      -o-transition-duration: 3400ms;
+      transition-duration: 3400ms; }
+    .artist.appear.appear-active:nth-child(67) {
+      -webkit-transition-duration: 3450ms;
+      -o-transition-duration: 3450ms;
+      transition-duration: 3450ms; }
+    .artist.appear.appear-active:nth-child(68) {
+      -webkit-transition-duration: 3500ms;
+      -o-transition-duration: 3500ms;
+      transition-duration: 3500ms; }
+    .artist.appear.appear-active:nth-child(69) {
+      -webkit-transition-duration: 3550ms;
+      -o-transition-duration: 3550ms;
+      transition-duration: 3550ms; }
+    .artist.appear.appear-active:nth-child(70) {
+      -webkit-transition-duration: 3600ms;
+      -o-transition-duration: 3600ms;
+      transition-duration: 3600ms; }
+    .artist.appear.appear-active:nth-child(71) {
+      -webkit-transition-duration: 3650ms;
+      -o-transition-duration: 3650ms;
+      transition-duration: 3650ms; }
+    .artist.appear.appear-active:nth-child(72) {
+      -webkit-transition-duration: 3700ms;
+      -o-transition-duration: 3700ms;
+      transition-duration: 3700ms; }
+    .artist.appear.appear-active:nth-child(73) {
+      -webkit-transition-duration: 3750ms;
+      -o-transition-duration: 3750ms;
+      transition-duration: 3750ms; }
+    .artist.appear.appear-active:nth-child(74) {
+      -webkit-transition-duration: 3800ms;
+      -o-transition-duration: 3800ms;
+      transition-duration: 3800ms; }
+    .artist.appear.appear-active:nth-child(75) {
+      -webkit-transition-duration: 3850ms;
+      -o-transition-duration: 3850ms;
+      transition-duration: 3850ms; }
+    .artist.appear.appear-active:nth-child(76) {
+      -webkit-transition-duration: 3900ms;
+      -o-transition-duration: 3900ms;
+      transition-duration: 3900ms; }
+    .artist.appear.appear-active:nth-child(77) {
+      -webkit-transition-duration: 3950ms;
+      -o-transition-duration: 3950ms;
+      transition-duration: 3950ms; }
+    .artist.appear.appear-active:nth-child(78) {
+      -webkit-transition-duration: 4000ms;
+      -o-transition-duration: 4000ms;
+      transition-duration: 4000ms; }
+    .artist.appear.appear-active:nth-child(79) {
+      -webkit-transition-duration: 4050ms;
+      -o-transition-duration: 4050ms;
+      transition-duration: 4050ms; }
+    .artist.appear.appear-active:nth-child(80) {
+      -webkit-transition-duration: 4100ms;
+      -o-transition-duration: 4100ms;
+      transition-duration: 4100ms; }
+    .artist.appear.appear-active:nth-child(81) {
+      -webkit-transition-duration: 4150ms;
+      -o-transition-duration: 4150ms;
+      transition-duration: 4150ms; }
+    .artist.appear.appear-active:nth-child(82) {
+      -webkit-transition-duration: 4200ms;
+      -o-transition-duration: 4200ms;
+      transition-duration: 4200ms; }
+    .artist.appear.appear-active:nth-child(83) {
+      -webkit-transition-duration: 4250ms;
+      -o-transition-duration: 4250ms;
+      transition-duration: 4250ms; }
+    .artist.appear.appear-active:nth-child(84) {
+      -webkit-transition-duration: 4300ms;
+      -o-transition-duration: 4300ms;
+      transition-duration: 4300ms; }
+    .artist.appear.appear-active:nth-child(85) {
+      -webkit-transition-duration: 4350ms;
+      -o-transition-duration: 4350ms;
+      transition-duration: 4350ms; }
+    .artist.appear.appear-active:nth-child(86) {
+      -webkit-transition-duration: 4400ms;
+      -o-transition-duration: 4400ms;
+      transition-duration: 4400ms; }
+    .artist.appear.appear-active:nth-child(87) {
+      -webkit-transition-duration: 4450ms;
+      -o-transition-duration: 4450ms;
+      transition-duration: 4450ms; }
+    .artist.appear.appear-active:nth-child(88) {
+      -webkit-transition-duration: 4500ms;
+      -o-transition-duration: 4500ms;
+      transition-duration: 4500ms; }
+    .artist.appear.appear-active:nth-child(89) {
+      -webkit-transition-duration: 4550ms;
+      -o-transition-duration: 4550ms;
+      transition-duration: 4550ms; }
+    .artist.appear.appear-active:nth-child(90) {
+      -webkit-transition-duration: 4600ms;
+      -o-transition-duration: 4600ms;
+      transition-duration: 4600ms; }
+    .artist.appear.appear-active:nth-child(91) {
+      -webkit-transition-duration: 4650ms;
+      -o-transition-duration: 4650ms;
+      transition-duration: 4650ms; }
+    .artist.appear.appear-active:nth-child(92) {
+      -webkit-transition-duration: 4700ms;
+      -o-transition-duration: 4700ms;
+      transition-duration: 4700ms; }
+    .artist.appear.appear-active:nth-child(93) {
+      -webkit-transition-duration: 4750ms;
+      -o-transition-duration: 4750ms;
+      transition-duration: 4750ms; }
+    .artist.appear.appear-active:nth-child(94) {
+      -webkit-transition-duration: 4800ms;
+      -o-transition-duration: 4800ms;
+      transition-duration: 4800ms; }
+    .artist.appear.appear-active:nth-child(95) {
+      -webkit-transition-duration: 4850ms;
+      -o-transition-duration: 4850ms;
+      transition-duration: 4850ms; }
+    .artist.appear.appear-active:nth-child(96) {
+      -webkit-transition-duration: 4900ms;
+      -o-transition-duration: 4900ms;
+      transition-duration: 4900ms; }
+    .artist.appear.appear-active:nth-child(97) {
+      -webkit-transition-duration: 4950ms;
+      -o-transition-duration: 4950ms;
+      transition-duration: 4950ms; }
+    .artist.appear.appear-active:nth-child(98) {
+      -webkit-transition-duration: 5000ms;
+      -o-transition-duration: 5000ms;
+      transition-duration: 5000ms; }
+    .artist.appear.appear-active:nth-child(99) {
+      -webkit-transition-duration: 5050ms;
+      -o-transition-duration: 5050ms;
+      transition-duration: 5050ms; }
+    .artist.appear.appear-active:nth-child(100) {
+      -webkit-transition-duration: 5100ms;
+      -o-transition-duration: 5100ms;
+      transition-duration: 5100ms; }
+  .artist.leave {
+    opacity: 1;
+    transition: all 0.5s ease;
+    transform: translateY(0); }
+    .artist.leave:nth-child(20) {
+      -webkit-transition-duration: 130ms;
+      -o-transition-duration: 130ms;
+      transition-duration: 130ms; }
+    .artist.leave:nth-child(19) {
+      -webkit-transition-duration: 160ms;
+      -o-transition-duration: 160ms;
+      transition-duration: 160ms; }
+    .artist.leave:nth-child(18) {
+      -webkit-transition-duration: 190ms;
+      -o-transition-duration: 190ms;
+      transition-duration: 190ms; }
+    .artist.leave:nth-child(17) {
+      -webkit-transition-duration: 220ms;
+      -o-transition-duration: 220ms;
+      transition-duration: 220ms; }
+    .artist.leave:nth-child(16) {
+      -webkit-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      transition-duration: 250ms; }
+    .artist.leave:nth-child(15) {
+      -webkit-transition-duration: 280ms;
+      -o-transition-duration: 280ms;
+      transition-duration: 280ms; }
+    .artist.leave:nth-child(14) {
+      -webkit-transition-duration: 310ms;
+      -o-transition-duration: 310ms;
+      transition-duration: 310ms; }
+    .artist.leave:nth-child(13) {
+      -webkit-transition-duration: 340ms;
+      -o-transition-duration: 340ms;
+      transition-duration: 340ms; }
+    .artist.leave:nth-child(12) {
+      -webkit-transition-duration: 370ms;
+      -o-transition-duration: 370ms;
+      transition-duration: 370ms; }
+    .artist.leave:nth-child(11) {
+      -webkit-transition-duration: 400ms;
+      -o-transition-duration: 400ms;
+      transition-duration: 400ms; }
+    .artist.leave:nth-child(10) {
+      -webkit-transition-duration: 430ms;
+      -o-transition-duration: 430ms;
+      transition-duration: 430ms; }
+    .artist.leave:nth-child(9) {
+      -webkit-transition-duration: 460ms;
+      -o-transition-duration: 460ms;
+      transition-duration: 460ms; }
+    .artist.leave:nth-child(8) {
+      -webkit-transition-duration: 490ms;
+      -o-transition-duration: 490ms;
+      transition-duration: 490ms; }
+    .artist.leave:nth-child(7) {
+      -webkit-transition-duration: 520ms;
+      -o-transition-duration: 520ms;
+      transition-duration: 520ms; }
+    .artist.leave:nth-child(6) {
+      -webkit-transition-duration: 550ms;
+      -o-transition-duration: 550ms;
+      transition-duration: 550ms; }
+    .artist.leave:nth-child(5) {
       -webkit-transition-duration: 580ms;
       -o-transition-duration: 580ms;
       transition-duration: 580ms; }
-    .artist.leave.leave-active.place__item:nth-child(4) {
+    .artist.leave:nth-child(4) {
       -webkit-transition-duration: 610ms;
       -o-transition-duration: 610ms;
       transition-duration: 610ms; }
-    .artist.leave.leave-active.place__item:nth-child(3) {
+    .artist.leave:nth-child(3) {
       -webkit-transition-duration: 640ms;
       -o-transition-duration: 640ms;
       transition-duration: 640ms; }
-    .artist.leave.leave-active.place__item:nth-child(2) {
+    .artist.leave:nth-child(2) {
       -webkit-transition-duration: 670ms;
       -o-transition-duration: 670ms;
       transition-duration: 670ms; }
-    .artist.leave.leave-active.place__item:nth-child(1) {
+    .artist.leave:nth-child(1) {
+      -webkit-transition-duration: 700ms;
+      -o-transition-duration: 700ms;
+      transition-duration: 700ms; }
+  .artist.leave.leave-active {
+    transition: all 0.5s ease;
+    transform: translateY(99em); }
+    .artist.leave.leave-active:nth-child(20) {
+      -webkit-transition-duration: 130ms;
+      -o-transition-duration: 130ms;
+      transition-duration: 130ms; }
+    .artist.leave.leave-active:nth-child(19) {
+      -webkit-transition-duration: 160ms;
+      -o-transition-duration: 160ms;
+      transition-duration: 160ms; }
+    .artist.leave.leave-active:nth-child(18) {
+      -webkit-transition-duration: 190ms;
+      -o-transition-duration: 190ms;
+      transition-duration: 190ms; }
+    .artist.leave.leave-active:nth-child(17) {
+      -webkit-transition-duration: 220ms;
+      -o-transition-duration: 220ms;
+      transition-duration: 220ms; }
+    .artist.leave.leave-active:nth-child(16) {
+      -webkit-transition-duration: 250ms;
+      -o-transition-duration: 250ms;
+      transition-duration: 250ms; }
+    .artist.leave.leave-active:nth-child(15) {
+      -webkit-transition-duration: 280ms;
+      -o-transition-duration: 280ms;
+      transition-duration: 280ms; }
+    .artist.leave.leave-active:nth-child(14) {
+      -webkit-transition-duration: 310ms;
+      -o-transition-duration: 310ms;
+      transition-duration: 310ms; }
+    .artist.leave.leave-active:nth-child(13) {
+      -webkit-transition-duration: 340ms;
+      -o-transition-duration: 340ms;
+      transition-duration: 340ms; }
+    .artist.leave.leave-active:nth-child(12) {
+      -webkit-transition-duration: 370ms;
+      -o-transition-duration: 370ms;
+      transition-duration: 370ms; }
+    .artist.leave.leave-active:nth-child(11) {
+      -webkit-transition-duration: 400ms;
+      -o-transition-duration: 400ms;
+      transition-duration: 400ms; }
+    .artist.leave.leave-active:nth-child(10) {
+      -webkit-transition-duration: 430ms;
+      -o-transition-duration: 430ms;
+      transition-duration: 430ms; }
+    .artist.leave.leave-active:nth-child(9) {
+      -webkit-transition-duration: 460ms;
+      -o-transition-duration: 460ms;
+      transition-duration: 460ms; }
+    .artist.leave.leave-active:nth-child(8) {
+      -webkit-transition-duration: 490ms;
+      -o-transition-duration: 490ms;
+      transition-duration: 490ms; }
+    .artist.leave.leave-active:nth-child(7) {
+      -webkit-transition-duration: 520ms;
+      -o-transition-duration: 520ms;
+      transition-duration: 520ms; }
+    .artist.leave.leave-active:nth-child(6) {
+      -webkit-transition-duration: 550ms;
+      -o-transition-duration: 550ms;
+      transition-duration: 550ms; }
+    .artist.leave.leave-active:nth-child(5) {
+      -webkit-transition-duration: 580ms;
+      -o-transition-duration: 580ms;
+      transition-duration: 580ms; }
+    .artist.leave.leave-active:nth-child(4) {
+      -webkit-transition-duration: 610ms;
+      -o-transition-duration: 610ms;
+      transition-duration: 610ms; }
+    .artist.leave.leave-active:nth-child(3) {
+      -webkit-transition-duration: 640ms;
+      -o-transition-duration: 640ms;
+      transition-duration: 640ms; }
+    .artist.leave.leave-active:nth-child(2) {
+      -webkit-transition-duration: 670ms;
+      -o-transition-duration: 670ms;
+      transition-duration: 670ms; }
+    .artist.leave.leave-active:nth-child(1) {
       -webkit-transition-duration: 700ms;
       -o-transition-duration: 700ms;
       transition-duration: 700ms; }

@@ -16,17 +16,18 @@
     
      &.appear {
          transition: all 1s ease;
-          transform: translateY(-99em);
+        transform: translateY(99em);
           
-        
-        $delay: 100;
-        @for $i from 1 through 20 {
+             $delay: 100;
+        @for $i from 20 through 1 {
             $delay: $delay + 30;
           
-            &.place__item:nth-child(#{$i}) {
+            &:nth-child(#{$i}) {
                 -webkit-transition-duration: #{$delay}ms;
                 -o-transition-duration: #{$delay}ms;
                 transition-duration: #{$delay}ms;
+
+                 
             }
          
         }
@@ -36,22 +37,48 @@
         &.appear.appear-active {
             transition: all 1s ease;
           transform: translateY(0);
+          $delay: 100;
+        @for $i from 1 through 100 {
+            $delay: $delay + 50;
+          
+            &:nth-child(#{$i}) {
+                -webkit-transition-duration: #{$delay}ms;
+                -o-transition-duration: #{$delay}ms;
+                transition-duration: #{$delay}ms;
+            }
+         
+        }
         }
 
         &.leave {
             opacity: 1;
-             transition: all 1s ease;
+             transition: all 0.5s ease;
           transform: translateY(0);
+
+               $delay: 100;
+        @for $i from 20 through 1 {
+            $delay: $delay + 30;
+          
+            &:nth-child(#{$i}) {
+                -webkit-transition-duration: #{$delay}ms;
+                -o-transition-duration: #{$delay}ms;
+                transition-duration: #{$delay}ms;
+
+                 
+            }
+         
+        }
+
         }
 
         &.leave.leave-active {
-             transition: all 1s ease;
-            transform: translateY(-99em);
+             transition: all 0.5s ease;
+            transform: translateY(99em);
             $delay: 100;
         @for $i from 20 through 1 {
             $delay: $delay + 30;
           
-            &.place__item:nth-child(#{$i}) {
+            &:nth-child(#{$i}) {
                 -webkit-transition-duration: #{$delay}ms;
                 -o-transition-duration: #{$delay}ms;
                 transition-duration: #{$delay}ms;
