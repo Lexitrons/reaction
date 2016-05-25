@@ -41,7 +41,7 @@ var SpotAlbum = React.createClass({
       return i.id;
     }).join(',') 
     
-    var accessToken = "BQBJUE9UwVKV37EapKrNtqm85tJVQTidmmdaIq3SUNkywwDgCMV5JsMCmLeq3vy8C_qIPjyUFXa2CnU7j0lhWKai5NjKBSJnnysM8yJ19Tm-ZgmLqOQIM2Ckc2fkfD3lRbDpvfRu-VXd1_Y";
+    var accessToken = "BQAeLgdfKTyHyDUrHgJ7Se7DCoEwj_p9jIXQCa0y6zdTSWf-ADJSY2UVZEDQMuBhSAQTw779vVGM1uQILNRUzE9apwNRzfRSe3GOAacfSUnW3giqGoakxStpbn4t38hJLLKFeUXc2D9hZMc";
 
     $.ajax({
         url: "https://api.spotify.com/v1/audio-features?ids="+trackAudio ,

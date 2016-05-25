@@ -20,7 +20,7 @@ function Stars (props) {
 
     return (
         <div className="rating">
-            <h3 className="rating__count">Review: </h3>   
+            <h3 className="rating__count">Rating:</h3>   
             <ul className="stars">
                 {list}
             </ul>

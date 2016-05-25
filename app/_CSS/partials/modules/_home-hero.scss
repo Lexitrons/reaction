@@ -23,6 +23,7 @@
 
     &__button {
         border: 0;
+        display: inline-block;
         font-family: $font-serif;
         color: $white;
         background: $teal;
@@ -36,6 +37,9 @@
         -o-transition: all 0.25s;
         transition: all 0.25s;
         cursor: pointer;
+        margin-top: 20px;
+        margin-right: 20px;
+        text-decoration: none;
 
         &:hover {
             background: darken($teal, 20);

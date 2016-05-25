@@ -16,18 +16,20 @@ var SpotifyContainer = require('../containers/SpotifySearch');
 var ArtistDetail = require('../containers/SpotifyDetail');
 var AlbumDetail = require('../containers/SpotifyAlbum');
 var NoRoute = require('../containers/NoRoute');
+var Form = require('../containers/Form');
  
 var routes = (
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
             <IndexRoute component={Home} />
+
             <Route path='/form' header='Fill Out Info' component={formFieldsContainer} />
             <Route name="detail" path='/detail' header='Product Detail' component={detailsContainer} />
             <Route name="music" path='/music' header='Spotify Search' component={SpotifyContainer} />
             <Route name="musicDetail" path='/music/artist/:artist' header='Artist Detail' component={ArtistDetail} />
             <Route name="albumDetail" path='/album/:album' header='Album Detail' component={AlbumDetail} />
+              <Route name="form" path='/FormTest' header='Trying Fields' component={Form} />
         </Route>
-        
     </Router>
 )
 

@@ -25,11 +25,8 @@ function DetailInfo (props) {
                 </li>}
 
                 { !!props.info.formatted_phone_number && 
-                    <li className="detail__item"> {props.info.formatted_phone_number}
-                </li>}
-
-                { !!props.info.formatted_phone_number && 
-                    <li className="detail__item"> {props.info.formatted_phone_number}
+                    <li className="detail__item">
+                        {props.info.formatted_phone_number}
                 </li>}
 
                 { !!props.info.reviews && 

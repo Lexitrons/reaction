@@ -13,16 +13,19 @@
 .left-column,
 .right-column {
    flex-basis: 50%;
+   height: 100%;
 }
 
 .left-column--quarter  {
     flex-basis: 30%;
+    height: 100%;
+    overflow: scroll;
 }
 
 .right-column--three-quarter  {
      flex-basis: 70%;
+     height: 100%;
 }
-
 
 ::-webkit-scrollbar { 
     display: none; 

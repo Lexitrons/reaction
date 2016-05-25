@@ -45,7 +45,7 @@ var DetailsContainer = React.createClass({
      if (status == google.maps.places.PlacesServiceStatus.OK) {
         var lat = response.geometry.location.lat;
         var lng = response.geometry.location.lng;
-        
+          console.log("works")
         this.setState({
           details: response,
           isLoading: false,
@@ -53,8 +53,6 @@ var DetailsContainer = React.createClass({
           lat: lat,
           lng: lng
         });
-
-          
 
         
         mapView = new google.maps.Map( document.getElementById('detail-map__map'), {
@@ -66,6 +64,8 @@ var DetailsContainer = React.createClass({
                 map: mapView,
                 position: response.geometry.location
             });
+    } else {
+      console.log( "Fail")
     }
 
    
