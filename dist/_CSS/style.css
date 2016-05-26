@@ -1839,6 +1839,8 @@ table {
   overflow-x: scroll;
   overflow-y: visible;
   animation: showIn ease-in-out .35s; }
+  .list-items__inner {
+    border-top: 10px solid #CE4F4F; }
   .list-items__header {
     font-size: 24px;
     padding: 15px;
@@ -1853,18 +1855,7 @@ table {
     padding: 15px;
     animation: showIn ease-in-out .35s;
     background: #ffffff;
-    box-shadow: 0 10px 20px -5px rgba(47, 53, 60, 0.7);
-    transition: all 0.5s ease;
-    -webkit-transform: translate(0) scale(1);
-    -ms-transform: translate(0) scale(1);
-    -o-transform: translate(0) scale(1);
-    transform: translate(0) scale(1); }
-    .list-items__item:hover {
-      z-index: 2;
-      -webkit-transform: translate(-5px, -5px);
-      -ms-transform: translate(-5px, -5px);
-      -o-transform: translate(-5px, -5px);
-      transform: translate(-5px, -5px); }
+    box-shadow: 0 10px 20px -5px rgba(47, 53, 60, 0.7); }
     .list-items__item + .list-items__item {
       border-top: 1px solid #c9ced4; }
     .list-items__item h3 {
@@ -1938,10 +1929,12 @@ table {
 
 .single-item {
   flex-basis: 50%;
-  padding: 7% 3%;
+  padding: 3%;
   align-self: center;
-  overflow: scroll;
-  animation: showIn ease-in-out .35s; }
+  background: #ffffff;
+  box-shadow: 0 10px 20px -7px rgba(47, 53, 60, 0.7);
+  animation: showIn ease-in-out .35s;
+  border-top: 10px solid #1B8C8E; }
   .single-item__first {
     font-size: 55px;
     display: block;

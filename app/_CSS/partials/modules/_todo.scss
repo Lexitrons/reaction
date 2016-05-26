@@ -181,7 +181,7 @@
     animation: showIn ease-in-out .35s;
     
     &__inner {
-        
+        border-top: 10px solid $red;
  
     }
 
@@ -205,19 +205,6 @@
         animation: showIn ease-in-out .35s;
         background: $white;
         box-shadow: 0 10px 20px -5px rgba($black, 0.7);
-        transition: all 0.5s ease;
-        -webkit-transform: translate(0) scale(1);
-        -ms-transform: translate(0) scale(1);
-        -o-transform: translate(0) scale(1);
-        transform: translate(0) scale(1);
-
-        &:hover {
-            z-index: 2;
-             -webkit-transform: translate(-5px, -5px);
-            -ms-transform: translate(-5px, -5px);
-            -o-transform: translate(-5px, -5px);
-            transform: translate(-5px, -5px);
-        }
 
         & + & {
             border-top: 1px solid lighten( $black, 60);
@@ -327,13 +314,14 @@
     }
 }
 
-
 .single-item {
     flex-basis: 50%;
-    padding: 7% 3%;
+    padding: 3%;
     align-self: center;
-    overflow: scroll;
+    background: $white;
+    box-shadow: 0 10px 20px -7px rgba($black, 0.7);
     animation: showIn ease-in-out .35s;
+    border-top: 10px solid $green;
 
     &__first {
         font-size: 55px;

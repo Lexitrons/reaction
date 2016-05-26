@@ -32,21 +32,23 @@ var Form = React.createClass({
      
   },
   _HandleChange :function (a) {
+    var i = 0;
+    var refs = this.refs
       var items = {
-          name: this.refs.name.value,
-          desc: this.refs.desc.value,
-          subtitle: this.refs.subtitle.value,
-          email: this.refs.email.value,
-          lastName: this.refs.lastName.value 
+          name: this.Validate(this.refs.name),
+          desc: this.Validate(this.refs.desc),
+          subtitle: this.Validate(this.refs.subtitle),
+          email: this.Validate(this.refs.email),
+          lastName: this.Validate(this.refs.lastName) 
         }
       return items;
   },
-  Validate: function(value) {
-      if(value.length > 4) {
-        return true;
-      } else {
-        return false;
-      }
+  Validate: function(input) {
+       if( input.value.length > 0 ) {
+            return input.value
+       } else {
+            return "N/A"
+       }
   },
   _clearAll: function() {
     localStorage.setItem('toDo', "");
@@ -196,7 +198,6 @@ var Form = React.createClass({
            </div>
         }
 
-
         {!this.state.showList && 
             <div className="single-item">
                 <ul className="single-item__list">
@@ -215,7 +216,7 @@ var Form = React.createClass({
                     </li>
                     <li>
                         <h4>
-                            <span className="single-item__label">Title</span>
+                            <span className="single-item__label">Email</span>
                             {this.state.single.email}
                         </h4>
                     </li>
