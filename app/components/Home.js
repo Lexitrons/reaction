@@ -34,6 +34,9 @@ var Home = React.createClass({
                     <Link to='/music'className='home-hero__button'>
                       <span >Spotify</span>
                     </Link>
+                     <Link to='/formTest'className='home-hero__button'>
+                      <span >vCard Creator</span>
+                    </Link>
                 </div> 
         </ReactCSSTransitionGroup>
         
