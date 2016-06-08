@@ -1,24 +1,24 @@
-var React = require('react');
-var ReactRouter = require('react-router');
+let React = require('react');
+let ReactRouter = require('react-router');
 
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var IndexRoute = ReactRouter.IndexRoute;
-var NotFoundRoute = ReactRouter.NotFoundRoute; 
+let Router = ReactRouter.Router;
+let Route = ReactRouter.Route;
+let IndexRoute = ReactRouter.IndexRoute;
+let NotFoundRoute = ReactRouter.NotFoundRoute; 
 
-var hashHistory = ReactRouter.hashHistory
+let hashHistory = ReactRouter.hashHistory
 
-var Main = require('../components/Main');
-var Home = require('../components/Home');
-var formFieldsContainer = require('../containers/formFieldsContainer');
-var detailsContainer = require('../containers/detailsContainer');
-var SpotifyContainer = require('../containers/SpotifySearch');
-var ArtistDetail = require('../containers/SpotifyDetail');
-var AlbumDetail = require('../containers/SpotifyAlbum');
-var NoRoute = require('../containers/NoRoute');
-var Form = require('../containers/Form');
+let Main = require('../components/Main');
+let Home = require('../components/Home');
+let formFieldsContainer = require('../containers/formFieldsContainer');
+let detailsContainer = require('../containers/detailsContainer');
+let SpotifyContainer = require('../containers/SpotifySearch');
+let ArtistDetail = require('../containers/SpotifyDetail');
+let AlbumDetail = require('../containers/SpotifyAlbum');
+let NoRoute = require('../containers/NoRoute');
+let Form = require('../containers/Form');
  
-var routes = (
+const routes = (
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
             <IndexRoute component={Home} />

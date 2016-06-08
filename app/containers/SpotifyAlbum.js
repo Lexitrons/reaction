@@ -41,7 +41,7 @@ var SpotAlbum = React.createClass({
       return i.id;
     }).join(',') 
     
-    var accessToken = "BQAeLgdfKTyHyDUrHgJ7Se7DCoEwj_p9jIXQCa0y6zdTSWf-ADJSY2UVZEDQMuBhSAQTw779vVGM1uQILNRUzE9apwNRzfRSe3GOAacfSUnW3giqGoakxStpbn4t38hJLLKFeUXc2D9hZMc";
+    var accessToken = "BQDFSaicQgIMRTT6_3ZEN0j1vQqqEDZT-o6HecBQZrDbF9IWlvDy377BdzV7Xw1LGhxLOxBqp4pI9uxkIbVePDSSZap4m4V84fV1mc8wLfZ5XsCYgPkxXGsec6JLuFQ8F4KO-sBAwhJg_Wc";
 
     $.ajax({
         url: "https://api.spotify.com/v1/audio-features?ids="+trackAudio ,
@@ -76,13 +76,11 @@ var SpotAlbum = React.createClass({
     });
   },
 
-  componentDidMount: function() {
-    
+  componentDidMount: function() { 
   },
 
   componentWillUpdate:function() {
   },
-
 
   render: function () { 
     return (

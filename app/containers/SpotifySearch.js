@@ -23,14 +23,14 @@ var SpotifyContainer = React.createClass({
   },
   
   handleChange: function(e) {
-    this.setState({
-      search: e.target.value
-    });
-  },
-  
-  handleClick: function(e,i,b,c) {
-      e.preventDefault();
- 
+    if(e.target.value != this.state.search ) {
+      this.setState({
+        search: e.target.value
+      });
+    } else {
+      console.log("change search term");
+    }
+    
   },
   
   handleSubmit: function (e) {
@@ -52,9 +52,15 @@ var SpotifyContainer = React.createClass({
     }); 
    },
    setResults: function( data) {
+    if ( data.artists.items.length === 0 ) {
+      this.setState({
+          results: -1
+      });
+    } else {
       this.setState({
           results: data.artists.items
       });
+    }
    },
 
   componentWillUpdate:function() {
@@ -62,6 +68,7 @@ var SpotifyContainer = React.createClass({
   },
 
   render: function () { 
+    console.log( this.state.results.length )
     return (
       <div className="main-inner">
          
@@ -87,7 +94,9 @@ var SpotifyContainer = React.createClass({
         />
       </ReactCSSTransitionGroup>
       <div className="right-column">
-       <ReactCSSTransitionGroup 
+      {this.state.results === -1 ? 
+        <h3 className="no-results">No Results Please Search Again</h3>
+        : <ReactCSSTransitionGroup 
                 transitionName={{
                     enter: 'appear',
                     enterActive: 'appear-active',
@@ -104,20 +113,21 @@ var SpotifyContainer = React.createClass({
                 component='ul' 
                 className=" arist-list "
                 >
- 
-              
-              {this.state.results.map( function( info, index) {
+            
+              {this.state.results.map( ( info, index) => {
                         return (
                             <SpotResults
                                 results={info}
                                 key={index}
-                                click={this.handleClick}
+                              
                             />
                         )
-                    }.bind(this))}
+                    })}
 
             
       </ReactCSSTransitionGroup>
+
+    }
       </div>
       </div>
       )

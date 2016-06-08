@@ -1,10 +1,7 @@
-var React = require('react');
-var First = require('../components/forms/First');
-var Second = require('../components/forms/Second');
+let React = require('react');
+let Form = React.createClass({
 
-var Form = React.createClass({
-
-  getInitialState: function () {
+  getInitialState () {
       return {
       first: true,
       second:false,
@@ -12,29 +9,32 @@ var Form = React.createClass({
       index: 0,
       showList: true,
       single: {},
-      singleIndex: -1
+      showSingle: false,
+      singleIndex: -1,
+      editSingle: false,
+      showFields: true
     }
 
   },
-  componentWillMount:function(){
+  componentWillMount() {
     if(localStorage.toDo ) {
         this.setState({
-          items : JSON.parse(localStorage.toDo)
+          items : JSON.parse(localStorage.toDo),
+          showFields: false
         })
-        console.log(this.state.items)
     }
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
   },
 
-  componentWillUpdate:function() {
+  componentWillUpdate() {
      
   },
-  _HandleChange :function (a) {
-    var i = 0;
-    var refs = this.refs
-      var items = {
+  _HandleChange (a) {
+
+    let refs = this.refs
+      let items = {
           name: this.Validate(this.refs.name),
           desc: this.Validate(this.refs.desc),
           subtitle: this.Validate(this.refs.subtitle),
@@ -43,35 +43,54 @@ var Form = React.createClass({
         }
       return items;
   },
-  Validate: function(input) {
+    _HandleEdit (a) {
+
+      let refs = this.refs
+      let items = {
+          name: this.Validate(this.refs.singlename),
+          desc: this.Validate(this.refs.singledesc),
+          subtitle: this.Validate(this.refs.singlesubtitle),
+          email: this.Validate(this.refs.singleemail),
+          lastName: this.Validate(this.refs.singlelastName) 
+        }
+      return items;
+  },
+  Validate(input) {
        if( input.value.length > 0 ) {
             return input.value
        } else {
             return "N/A"
        }
   },
-  _clearAll: function() {
+  _clearAll() {
     localStorage.setItem('toDo', "");
      this.setState({
-          items : []
+        items : [],
+        single : {},
+        showList: true,
+        singleIndex: -1,
+        showSingle: false,
+        showFields: true
         })
   },
-  remove: function( v ){
-    var newObject = this.state.items;
+  remove( v ){
+    let newObject = this.state.items;
     
     newObject.splice(v , 1)
     
     this.setState({ 
-      items: newObject,
-      single : {},
-      showList: true,
-      singleIndex: -1
+        items: newObject,
+        single : {},
+        showList: true,
+        singleIndex: -1,
+        showSingle: false,
+        showFields: true
     });
 
     localStorage.setItem('toDo', JSON.stringify(this.state.items));
   },
-  _submitFields: function() {
-    var newObject = this.state.items;
+  _submitFields() {
+    let newObject = this.state.items;
     
     newObject.push( this._HandleChange() )
     
@@ -79,7 +98,9 @@ var Form = React.createClass({
       items: newObject,
       single : {},
       showList: true,
-      singleIndex: -1
+      singleIndex: -1,
+      showSingle: false,
+      showFields: true
     });
 
     localStorage.setItem('toDo', JSON.stringify(this.state.items));
@@ -91,25 +112,75 @@ var Form = React.createClass({
     this.refs.email.value = "";
     this.refs.lastName.value = "";
   },
-  showMore: function( v ) {
+  showMore( v ) {
 
     this.setState({
       single : this.state.items[v],
       singleIndex: v,
       showList: false,
+      showSingle: true,
+      showFields: false
     })
   },
-  showList: function() {
+  showList() {
 
     this.setState({
       single : {},
       showList: true,
-      singleIndex: -1
+      singleIndex: -1,
+      showSingle: false,
+      showFields: false
     })
   },
+  _showFields() {
+        this.setState({
+            showFields: true,
+            showList: true,
+            singleIndex: -1,
+            showSingle: false,
+            editSingle: false,
+        })
+  },
+    editSingle() {
+        console.log(this.state.single)
+        this.setState({
+            showSingle: false,
+            editSingle: true,
+            showList: false,
+            showFields: false
+        })
+    },
+    _cancelSingle() {
+        this.setState({ 
+            showList: false,
+            showSingle: true,
+            editSingle: false,
+            showFields: false
+        });
+    },
+    _cancelFields() {
+        this.setState({
+            showFields: false
+        })
+    },
+    _submitSingle() {
+        let i = this.state.singleIndex;
+        console.log( this._HandleEdit() )
+        this.state.items[i] = this._HandleEdit();
 
-  render: function () { 
-    var showMod;
+        this.setState({ 
+            single : this.state.items[i],
+            showList: false,
+            showSingle: true,
+            editSingle: false
+
+        });
+
+        localStorage.setItem('toDo', JSON.stringify(this.state.items));
+
+    },
+  render () { 
+    let showMod;
     if (this.state.showList & this.state.items.length > 0 ) {
         showMod = true;
     } else {
@@ -117,7 +188,27 @@ var Form = React.createClass({
     }
     return (
       <div className="form-main-container">
-        <div className="form-wrapper">
+        <div className="options-nav">
+          {!this.state.showFields && 
+                <button className="options-nav__button" onClick={this._showFields}>
+                    <svg  x="0px" y="0px" viewBox="-2 4 24 24" >
+                    <polygon points="11.5,14.5 11.5,6.6 8.5,6.6 8.5,14.5 0.6,14.5 0.6,17.5 8.5,17.5 8.5,25.4 11.5,25.4 11.5,17.5 19.4,17.5 
+                        19.4,14.5 "/>
+                    </svg>
+
+                    Add New
+                </button>
+          }
+          {!this.state.showList && 
+                <button className="options-nav__button" onClick={this.showList}> 
+                    <svg viewBox="0 0 24 28">
+                        <path d="M24 21v2q0 0.406-0.297 0.703t-0.703 0.297h-22q-0.406 0-0.703-0.297t-0.297-0.703v-2q0-0.406 0.297-0.703t0.703-0.297h22q0.406 0 0.703 0.297t0.297 0.703zM24 13v2q0 0.406-0.297 0.703t-0.703 0.297h-22q-0.406 0-0.703-0.297t-0.297-0.703v-2q0-0.406 0.297-0.703t0.703-0.297h22q0.406 0 0.703 0.297t0.297 0.703zM24 5v2q0 0.406-0.297 0.703t-0.703 0.297h-22q-0.406 0-0.703-0.297t-0.297-0.703v-2q0-0.406 0.297-0.703t0.703-0.297h22q0.406 0 0.703 0.297t0.297 0.703z"></path>
+                        </svg>
+                    Show All
+                </button>
+          }
+        </div>
+        {this.state.showFields && <div className="form-wrapper">
             <div className="form-wrapper__inner">
                <h2 className="form-title">Making Lists</h2>
                     <ul className="field-list">
@@ -143,10 +234,12 @@ var Form = React.createClass({
                         </li>
                         <li className="field-wrap">
                             <button className="submit-fields" type="button" onClick={this._submitFields}>Submit</button>
+                            <button className="submit-fields" type="button" onClick={this._cancelFields}>Cancel</button>
                         </li>
                     </ul>
               </div>
         </div>
+    }
 
         { showMod && 
           <div className="list-items">
@@ -198,7 +291,7 @@ var Form = React.createClass({
            </div>
         }
 
-        {!this.state.showList && 
+        {this.state.showSingle && 
             <div className="single-item">
                 <ul className="single-item__list">
                     <li>
@@ -227,12 +320,41 @@ var Form = React.createClass({
                     </li>
                     <li>
                         <div className="single-item__controls">
-                            <button className="single-item__show-list" onClick={ this.showList } >Show List</button>
+                            <button className="single-item__remove-item" onClick={this.editSingle} >Edit</button>
                             <button className="single-item__remove-item" onClick={ this.remove.bind( null, this.state.singleIndex ) } >Remove</button>
                         </div>
                     </li>
                 </ul>
             </div>
+        }
+        {this.state.editSingle && 
+            <div className="single-item">
+             <ul className="single-field-list">
+                        <li className="single-field-wrap">
+                            <label htmlFor="single-name">First Name</label>
+                            <input type="text" name="single-name" placeholder="First Name" defaultValue={this.state.single.name} ref="singlename" id="single-name" />
+                        </li>
+                        <li className="single-field-wrap">
+                            <label htmlFor="single-lastName">Last Name</label>
+                            <input type="text" name="single-lastName" placeholder="Last Name" defaultValue={this.state.single.lastName} ref="singlelastName" id="single-lastName" />
+                        </li>
+                        <li className="single-field-wrap">
+                            <label htmlFor="single-subtitle">Subtitle</label>
+                            <input type="text" name="single-subtitle" placeholder="Title" defaultValue={this.state.single.subtitle} ref="singlesubtitle" id="single-subtitle" />
+                        </li>
+                        <li className="single-field-wrap">
+                            <label htmlFor="single-email">Email</label>
+                            <input type="text" name="single-email" placeholder="Email" defaultValue={this.state.single.email} ref="singleemail" id="single-email" />
+                        </li>
+                        <li className="single-field-wrap">
+                            <label htmlFor="single-desc">Description</label>
+                            <textarea type="text" name="single-desc" placeholder="Description" defaultValue={this.state.single.desc} ref="singledesc" id="single-desc" />
+                        </li>
+                        <li className="single-field-wrap">
+                            <button className="submit-fields" type="button" onClick={this._submitSingle}>Submit</button>
+                            <button className="submit-fields" type="button" onClick={this._cancelSingle}>Cancel</button>
+                        </li>
+                    </ul></div>
         }
 
       </div>
